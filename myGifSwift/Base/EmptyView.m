@@ -8,7 +8,7 @@
 
 #import "EmptyView.h"
 #import <Masonry/Masonry.h>
-#import "mysuper-Swift.h"
+#import "myGifSwift-Swift.h"
 #import "UIColor+IOSUtils.h"
 
 @interface EmptyView ()

@@ -1,8 +1,8 @@
 //
 //  BaseViewController.swift
-//  supermarket
+//  myGifSwift
 //
-//  Created by zhangmingwei on 2017/8/15.
+//  Created by zhangmingwei on 2017/8/22.
 //  Copyright © 2017年 niaoyutong. All rights reserved.
 //
 
@@ -11,7 +11,6 @@ import Cartography
 import IQKeyboardManagerSwift
 import RxCocoa
 import RxSwift
-
 class BaseViewController: UIViewController {
 
     // 添加单利后其他的页面才可以调用本文件，并且新建文件的时候可以继承本文件！！！！！！
@@ -29,7 +28,7 @@ class BaseViewController: UIViewController {
         // 默认背景色
         view.backgroundColor = UIColor.getBackgroundColorSwift()
         // 默认显示导航栏
-//        self.fd_prefersNavigationBarHidden = false; // .........
+        //        self.fd_prefersNavigationBarHidden = false; // .........
         
         // 隐藏导航栏 在具体的页面的viewDidLoad方法添加这句
         //    self.fd_prefersNavigationBarHidden = true;
@@ -104,9 +103,9 @@ class BaseViewController: UIViewController {
         naviSpace.width = -5 // 值越大越靠左边
         self.navigationItem.rightBarButtonItems = [naviSpace,rightItem]
         if let block = block {
-//            btn.rac_signal(for: .touchUpInside).subscribeNext({ UIButton in
-//                block(btn)
-//            })
+            //            btn.rac_signal(for: .touchUpInside).subscribeNext({ UIButton in
+            //                block(btn)
+            //            })
             _ = btn.rx.controlEvent(.touchUpInside).subscribe({_ in
                 block(btn)
             })
@@ -156,11 +155,11 @@ class BaseViewController: UIViewController {
         naviSpace.width = -5 // 值越大越靠左边
         self.navigationItem.leftBarButtonItems = [naviSpace,leftItem]
         if let block = block {
-//            btn.rac_signal(for: .touchUpInside).subscribeNext({ UIButton in
-//                block(btn)
-//            })
+            //            btn.rac_signal(for: .touchUpInside).subscribeNext({ UIButton in
+            //                block(btn)
+            //            })
             _ = btn.rx.controlEvent(.touchUpInside).subscribe({_ in
-                    block(btn)
+                block(btn)
             })
         }
     }
@@ -171,4 +170,3 @@ class BaseViewController: UIViewController {
     }
     
 }
-

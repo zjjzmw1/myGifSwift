@@ -30,7 +30,7 @@ extension String {
     
     /// 移除两个字符串之间的字符串后的结果
     public func removeAllSubString(beginStr: String, endStr: String) -> String {
-        SLog(self)
+        NSLog(self)
         var last = String.init(format: "%@",self)
         for _ in 0...self.components(separatedBy: beginStr).count + 1 {
             if last.contain(ofString: beginStr) && last.contain(ofString: endStr) {

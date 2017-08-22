@@ -1,14 +1,15 @@
 //
 //  RHRefreshHeader.swift
-//  RHRefresh
+//  myGifSwift
 //
-//  Created by xieruihua on 17/4/12.
-//  Copyright © 2017年 xieruihua. All rights reserved.
+//  Created by zhangmingwei on 2017/8/22.
+//  Copyright © 2017年 niaoyutong. All rights reserved.
 //
 
 import UIKit
 
 class RHRefreshHeader: NSObject {
+
     // 已经把这写文字隐藏了 - 新需求不需要展示文字，只是一个箭头就OK了
     var refreshLoadingTitle = "刷新数据中..."
     var refreshPulldownTitle = "下拉可以刷新"
@@ -98,7 +99,7 @@ class RHRefreshHeader: NSObject {
             loadingView.isHidden = false
             loadingView.startAnimating()
             
-            UIView.animate(withDuration: 0.3, animations: { 
+            UIView.animate(withDuration: 0.3, animations: {
                 let offsetY = self.scrollView.contentOffset.y
                 if offsetY > -CGFloat(self.headerHeight*3/2) {
                     self.scrollView.contentOffset = CGPoint(x: 0, y: offsetY - CGFloat(self.headerHeight*3/2))
@@ -118,7 +119,7 @@ class RHRefreshHeader: NSObject {
         self.loadingView.stopAnimating()
         self.loadingView.isHidden = true
         
-        UIView.animate(withDuration: 0.3) { 
+        UIView.animate(withDuration: 0.3) {
             self.scrollView.contentOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y + CGFloat(self.headerHeight*3/2))
             self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
             self.headerImage.transform = CGAffineTransform(rotationAngle: .pi*2)

@@ -1,15 +1,15 @@
 //
 //  RHRefreshFooter.swift
-//  RHRefresh
+//  myGifSwift
 //
-//  Created by xieruihua on 17/4/12.
-//  Copyright © 2017年 xieruihua. All rights reserved.
+//  Created by zhangmingwei on 2017/8/22.
+//  Copyright © 2017年 niaoyutong. All rights reserved.
 //
 
 import UIKit
 
 class RHRefreshFooter: NSObject {
-    
+
     var refreshHandler:(()->(Void))!
     
     var hasMoreData = true

@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 标题数组
         let  titleArray = ["首页","收藏","本地","我的"]
         // icon 未选中的数组
-        let  imageArray = ["account_normal","home_normal","message_normal","mycity_normal"]
+        let  imageArray = ["tab_0","tab_1","tab_2","tab_3"]
         // icon 选中的数组
-        let  selImageArray = ["account_highlight","home_highlight","message_highlight","mycity_highlight"]
+        let  selImageArray = ["tab_0_sel","tab_1_sel","tab_2_sel","tab_3_sel"]
         // tabbar高度最小值49.0, 传nil或<49.0均按49.0处理
         let height = CGFloat(49)
         // tabBarController

@@ -7,21 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186F863C9BF6536D3746A4E6 /* Pods_myGifSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60FB2CE5169BEB3ED2D93A1 /* Pods_myGifSwift.framework */; };
 		BDA23D7B1F4C059200B89066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D7A1F4C059200B89066 /* AppDelegate.swift */; };
-		BDA23D7D1F4C059200B89066 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D7C1F4C059200B89066 /* ViewController.swift */; };
-		BDA23D801F4C059200B89066 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D7E1F4C059200B89066 /* Main.storyboard */; };
 		BDA23D821F4C059200B89066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D811F4C059200B89066 /* Assets.xcassets */; };
-		BDA23D851F4C059200B89066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D831F4C059200B89066 /* LaunchScreen.storyboard */; };
+		BDA23DE51F4C078700B89066 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D8F1F4C071F00B89066 /* EmptyView.m */; };
+		BDA23DE61F4C078D00B89066 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DB31F4C071F00B89066 /* UIView+Utils.m */; };
+		BDA23DE71F4C079200B89066 /* UIColor+IOSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DC51F4C071F00B89066 /* UIColor+IOSUtils.m */; };
+		BDA23DE81F4C079700B89066 /* NSString+IOSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DCB1F4C071F00B89066 /* NSString+IOSUtils.m */; };
+		BDA23DE91F4C079C00B89066 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D9E1F4C071F00B89066 /* ProgressHUD.m */; };
+		BDA23DEA1F4C07A000B89066 /* Tooles.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DD41F4C071F00B89066 /* Tooles.m */; };
+		BDA23DEB1F4C07A600B89066 /* ESPictureBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DA31F4C071F00B89066 /* ESPictureBrowser.m */; };
+		BDA23DEC1F4C07AD00B89066 /* ESPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DA61F4C071F00B89066 /* ESPictureView.m */; };
+		BDA23DED1F4C07B100B89066 /* ESPictureProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DA71F4C071F00B89066 /* ESPictureProgressView.m */; };
+		BDA23DEE1F4C07B500B89066 /* ESPictureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DAA1F4C071F00B89066 /* ESPictureManager.m */; };
+		BDA23DF21F4C088700B89066 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DF11F4C088700B89066 /* FavoriteVC.swift */; };
+		BDA23DF41F4C089200B89066 /* LocalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DF31F4C089200B89066 /* LocalVC.swift */; };
+		BDA23DF61F4C089F00B89066 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23DF51F4C089F00B89066 /* MeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		847F258FFD16C60E0E7671E2 /* Pods-myGifSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myGifSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift.release.xcconfig"; sourceTree = "<group>"; };
+		8A2DF8133E0B7DBFD87A222D /* Pods-myGifSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myGifSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		BDA23D771F4C059200B89066 /* myGifSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGifSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA23D7A1F4C059200B89066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BDA23D7C1F4C059200B89066 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BDA23D7F1F4C059200B89066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDA23D811F4C059200B89066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BDA23D841F4C059200B89066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDA23D861F4C059200B89066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA23D8D1F4C071F00B89066 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BDA23D8E1F4C071F00B89066 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		BDA23D8F1F4C071F00B89066 /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		BDA23D921F4C071F00B89066 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BDA23D941F4C071F00B89066 /* JHNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHNetwork.swift; sourceTree = "<group>"; };
+		BDA23D971F4C071F00B89066 /* hud_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_success@2x.png"; sourceTree = "<group>"; };
+		BDA23D981F4C071F00B89066 /* hud_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_success@3x.png"; sourceTree = "<group>"; };
+		BDA23D991F4C071F00B89066 /* ProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		BDA23D9A1F4C071F00B89066 /* hud_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_error@3x.png"; sourceTree = "<group>"; };
+		BDA23D9B1F4C071F00B89066 /* hud_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_info@3x.png"; sourceTree = "<group>"; };
+		BDA23D9C1F4C071F00B89066 /* hud_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_info@2x.png"; sourceTree = "<group>"; };
+		BDA23D9D1F4C071F00B89066 /* hud_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_error@2x.png"; sourceTree = "<group>"; };
+		BDA23D9E1F4C071F00B89066 /* ProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		BDA23DA01F4C071F00B89066 /* UIViewController+InteractiveNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+InteractiveNavigation.swift"; sourceTree = "<group>"; };
+		BDA23DA11F4C071F00B89066 /* KDInteractiveNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDInteractiveNavigationController.swift; sourceTree = "<group>"; };
+		BDA23DA31F4C071F00B89066 /* ESPictureBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESPictureBrowser.m; sourceTree = "<group>"; };
+		BDA23DA41F4C071F00B89066 /* ESPictureProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESPictureProgressView.h; sourceTree = "<group>"; };
+		BDA23DA51F4C071F00B89066 /* ESPictureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESPictureManager.h; sourceTree = "<group>"; };
+		BDA23DA61F4C071F00B89066 /* ESPictureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESPictureView.m; sourceTree = "<group>"; };
+		BDA23DA71F4C071F00B89066 /* ESPictureProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESPictureProgressView.m; sourceTree = "<group>"; };
+		BDA23DA81F4C071F00B89066 /* ESPictureBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESPictureBrowser.h; sourceTree = "<group>"; };
+		BDA23DA91F4C071F00B89066 /* ESPictureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESPictureView.h; sourceTree = "<group>"; };
+		BDA23DAA1F4C071F00B89066 /* ESPictureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESPictureManager.m; sourceTree = "<group>"; };
+		BDA23DAC1F4C071F00B89066 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		BDA23DAD1F4C071F00B89066 /* MRPullToRefreshLoadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRPullToRefreshLoadMore.swift; sourceTree = "<group>"; };
+		BDA23DB01F4C071F00B89066 /* NSMutableAttributedString+JCAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+JCAttributedString.swift"; sourceTree = "<group>"; };
+		BDA23DB11F4C071F00B89066 /* UINavigationItem+JCLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+JCLoading.swift"; sourceTree = "<group>"; };
+		BDA23DB21F4C071F00B89066 /* UIImage+JCImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+JCImage.swift"; sourceTree = "<group>"; };
+		BDA23DB31F4C071F00B89066 /* UIView+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		BDA23DB41F4C071F00B89066 /* Data+JCData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JCData.swift"; sourceTree = "<group>"; };
+		BDA23DB51F4C071F00B89066 /* UIColor+IOSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+IOSUtils.h"; sourceTree = "<group>"; };
+		BDA23DB61F4C071F00B89066 /* UINavigationController+JCNavigationAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+JCNavigationAttributes.swift"; sourceTree = "<group>"; };
+		BDA23DB71F4C071F00B89066 /* Bundle+JCBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JCBundle.swift"; sourceTree = "<group>"; };
+		BDA23DB81F4C071F00B89066 /* UIView+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IOSUtil.swift"; sourceTree = "<group>"; };
+		BDA23DB91F4C071F00B89066 /* UIScrollView+JCScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+JCScrollView.swift"; sourceTree = "<group>"; };
+		BDA23DBA1F4C071F00B89066 /* UIResponder+JCResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+JCResponder.swift"; sourceTree = "<group>"; };
+		BDA23DBB1F4C071F00B89066 /* UIImageView+JCImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+JCImageView.swift"; sourceTree = "<group>"; };
+		BDA23DBC1F4C071F00B89066 /* FileManager+JCFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+JCFileManager.swift"; sourceTree = "<group>"; };
+		BDA23DBD1F4C071F00B89066 /* UITextView+JCTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+JCTextView.swift"; sourceTree = "<group>"; };
+		BDA23DBE1F4C071F00B89066 /* NSNumber+JCNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber+JCNumber.swift"; sourceTree = "<group>"; };
+		BDA23DBF1F4C071F00B89066 /* NSString+IOSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+IOSUtils.h"; sourceTree = "<group>"; };
+		BDA23DC01F4C071F00B89066 /* UIView+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		BDA23DC11F4C071F00B89066 /* UIColor+JCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+JCColor.swift"; sourceTree = "<group>"; };
+		BDA23DC21F4C071F00B89066 /* String+JCString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+JCString.swift"; sourceTree = "<group>"; };
+		BDA23DC31F4C071F00B89066 /* UIAlertController+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+IOSUtil.swift"; sourceTree = "<group>"; };
+		BDA23DC41F4C071F00B89066 /* Draw+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Draw+IOSUtil.swift"; sourceTree = "<group>"; };
+		BDA23DC51F4C071F00B89066 /* UIColor+IOSUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+IOSUtils.m"; sourceTree = "<group>"; };
+		BDA23DC61F4C071F00B89066 /* NSDate+JCDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+JCDate.swift"; sourceTree = "<group>"; };
+		BDA23DC71F4C071F00B89066 /* UIButton+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+IOSUtil.swift"; sourceTree = "<group>"; };
+		BDA23DC81F4C071F00B89066 /* DragableTableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableTableExtension.swift; sourceTree = "<group>"; };
+		BDA23DC91F4C071F00B89066 /* Date+JCDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+JCDate.swift"; sourceTree = "<group>"; };
+		BDA23DCA1F4C071F00B89066 /* UIWebView+JCWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWebView+JCWebView.swift"; sourceTree = "<group>"; };
+		BDA23DCB1F4C071F00B89066 /* NSString+IOSUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+IOSUtils.m"; sourceTree = "<group>"; };
+		BDA23DCC1F4C071F00B89066 /* DispatchQueue+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+IOSUtil.swift"; sourceTree = "<group>"; };
+		BDA23DCD1F4C071F00B89066 /* UITextField+JCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+JCTextField.swift"; sourceTree = "<group>"; };
+		BDA23DCF1F4C071F00B89066 /* RHRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RHRefreshHeader.swift; sourceTree = "<group>"; };
+		BDA23DD01F4C071F00B89066 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		BDA23DD11F4C071F00B89066 /* RHRefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RHRefreshFooter.swift; sourceTree = "<group>"; };
+		BDA23DD21F4C071F00B89066 /* Tooles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tooles.h; sourceTree = "<group>"; };
+		BDA23DD31F4C071F00B89066 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		BDA23DD41F4C071F00B89066 /* Tooles.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tooles.m; sourceTree = "<group>"; };
+		BDA23DD71F4C071F00B89066 /* XHTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHTabBar.swift; sourceTree = "<group>"; };
+		BDA23DD91F4C071F00B89066 /* ThridMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridMacros.swift; sourceTree = "<group>"; };
+		BDA23DDA1F4C071F00B89066 /* ApiMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMacros.swift; sourceTree = "<group>"; };
+		BDA23DDB1F4C071F00B89066 /* JCSwiftKitMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCSwiftKitMacro.swift; sourceTree = "<group>"; };
+		BDA23DDC1F4C071F00B89066 /* NotifiMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiMacros.swift; sourceTree = "<group>"; };
+		BDA23DDD1F4C071F00B89066 /* SizeMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeMacros.swift; sourceTree = "<group>"; };
+		BDA23DDE1F4C071F00B89066 /* PathMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMacros.swift; sourceTree = "<group>"; };
+		BDA23DDF1F4C071F00B89066 /* UtilMacros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilMacros.swift; sourceTree = "<group>"; };
+		BDA23DE01F4C071F00B89066 /* SingtonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingtonMacros.h; sourceTree = "<group>"; };
+		BDA23DE11F4C075900B89066 /* myGifSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myGifSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		BDA23DF11F4C088700B89066 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		BDA23DF31F4C089200B89066 /* LocalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVC.swift; sourceTree = "<group>"; };
+		BDA23DF51F4C089F00B89066 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
+		C60FB2CE5169BEB3ED2D93A1 /* Pods_myGifSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myGifSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +114,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186F863C9BF6536D3746A4E6 /* Pods_myGifSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1C0C4B9C6F294C6A8552EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C60FB2CE5169BEB3ED2D93A1 /* Pods_myGifSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		937327313B7FCEF57210FCD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A2DF8133E0B7DBFD87A222D /* Pods-myGifSwift.debug.xcconfig */,
+				847F258FFD16C60E0E7671E2 /* Pods-myGifSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BDA23D6E1F4C059200B89066 = {
 			isa = PBXGroup;
 			children = (
 				BDA23D791F4C059200B89066 /* myGifSwift */,
 				BDA23D781F4C059200B89066 /* Products */,
+				937327313B7FCEF57210FCD2 /* Pods */,
+				1A1C0C4B9C6F294C6A8552EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +160,220 @@
 			isa = PBXGroup;
 			children = (
 				BDA23D7A1F4C059200B89066 /* AppDelegate.swift */,
-				BDA23D7C1F4C059200B89066 /* ViewController.swift */,
-				BDA23D7E1F4C059200B89066 /* Main.storyboard */,
+				BDA23DE11F4C075900B89066 /* myGifSwift-Bridging-Header.h */,
+				BDA23D911F4C071F00B89066 /* 首页 */,
+				BDA23DEF1F4C085700B89066 /* 收藏 */,
+				BDA23DF01F4C085700B89066 /* 本地 */,
+				BDA23DD51F4C071F00B89066 /* 我的 */,
+				BDA23D8C1F4C071F00B89066 /* Base */,
+				BDA23DAE1F4C071F00B89066 /* CodeFragment */,
+				BDA23DD81F4C071F00B89066 /* Macro */,
+				BDA23D951F4C071F00B89066 /* MyFrameworks */,
+				BDA23D931F4C071F00B89066 /* RequestManager */,
+				BDA23D901F4C071F00B89066 /* Resoure */,
+				BDA23DD61F4C071F00B89066 /* Tabbar */,
 				BDA23D811F4C059200B89066 /* Assets.xcassets */,
-				BDA23D831F4C059200B89066 /* LaunchScreen.storyboard */,
 				BDA23D861F4C059200B89066 /* Info.plist */,
 			);
 			path = myGifSwift;
+			sourceTree = "<group>";
+		};
+		BDA23D8C1F4C071F00B89066 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23D8D1F4C071F00B89066 /* BaseViewController.swift */,
+				BDA23D8E1F4C071F00B89066 /* EmptyView.h */,
+				BDA23D8F1F4C071F00B89066 /* EmptyView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BDA23D901F4C071F00B89066 /* Resoure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resoure;
+			sourceTree = "<group>";
+		};
+		BDA23D911F4C071F00B89066 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23D921F4C071F00B89066 /* HomeVC.swift */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		BDA23D931F4C071F00B89066 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23D941F4C071F00B89066 /* JHNetwork.swift */,
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
+		BDA23D951F4C071F00B89066 /* MyFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23D961F4C071F00B89066 /* ProgressHUD */,
+				BDA23D9F1F4C071F00B89066 /* KDInteractiveNavigationController */,
+				BDA23DA21F4C071F00B89066 /* ESPictureBrowser */,
+				BDA23DAB1F4C071F00B89066 /* MRPullToRefreshLoadMore */,
+			);
+			path = MyFrameworks;
+			sourceTree = "<group>";
+		};
+		BDA23D961F4C071F00B89066 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23D971F4C071F00B89066 /* hud_success@2x.png */,
+				BDA23D981F4C071F00B89066 /* hud_success@3x.png */,
+				BDA23D991F4C071F00B89066 /* ProgressHUD.h */,
+				BDA23D9A1F4C071F00B89066 /* hud_error@3x.png */,
+				BDA23D9B1F4C071F00B89066 /* hud_info@3x.png */,
+				BDA23D9C1F4C071F00B89066 /* hud_info@2x.png */,
+				BDA23D9D1F4C071F00B89066 /* hud_error@2x.png */,
+				BDA23D9E1F4C071F00B89066 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		BDA23D9F1F4C071F00B89066 /* KDInteractiveNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DA01F4C071F00B89066 /* UIViewController+InteractiveNavigation.swift */,
+				BDA23DA11F4C071F00B89066 /* KDInteractiveNavigationController.swift */,
+			);
+			path = KDInteractiveNavigationController;
+			sourceTree = "<group>";
+		};
+		BDA23DA21F4C071F00B89066 /* ESPictureBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DA31F4C071F00B89066 /* ESPictureBrowser.m */,
+				BDA23DA41F4C071F00B89066 /* ESPictureProgressView.h */,
+				BDA23DA51F4C071F00B89066 /* ESPictureManager.h */,
+				BDA23DA61F4C071F00B89066 /* ESPictureView.m */,
+				BDA23DA71F4C071F00B89066 /* ESPictureProgressView.m */,
+				BDA23DA81F4C071F00B89066 /* ESPictureBrowser.h */,
+				BDA23DA91F4C071F00B89066 /* ESPictureView.h */,
+				BDA23DAA1F4C071F00B89066 /* ESPictureManager.m */,
+			);
+			path = ESPictureBrowser;
+			sourceTree = "<group>";
+		};
+		BDA23DAB1F4C071F00B89066 /* MRPullToRefreshLoadMore */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DAC1F4C071F00B89066 /* IndicatorView.swift */,
+				BDA23DAD1F4C071F00B89066 /* MRPullToRefreshLoadMore.swift */,
+			);
+			path = MRPullToRefreshLoadMore;
+			sourceTree = "<group>";
+		};
+		BDA23DAE1F4C071F00B89066 /* CodeFragment */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DAF1F4C071F00B89066 /* Category */,
+				BDA23DCE1F4C071F00B89066 /* Swift下拉上提刷新 */,
+				BDA23DD31F4C071F00B89066 /* Tool.swift */,
+				BDA23DD21F4C071F00B89066 /* Tooles.h */,
+				BDA23DD41F4C071F00B89066 /* Tooles.m */,
+			);
+			path = CodeFragment;
+			sourceTree = "<group>";
+		};
+		BDA23DAF1F4C071F00B89066 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DB01F4C071F00B89066 /* NSMutableAttributedString+JCAttributedString.swift */,
+				BDA23DB11F4C071F00B89066 /* UINavigationItem+JCLoading.swift */,
+				BDA23DB21F4C071F00B89066 /* UIImage+JCImage.swift */,
+				BDA23DB31F4C071F00B89066 /* UIView+Utils.m */,
+				BDA23DB41F4C071F00B89066 /* Data+JCData.swift */,
+				BDA23DB51F4C071F00B89066 /* UIColor+IOSUtils.h */,
+				BDA23DB61F4C071F00B89066 /* UINavigationController+JCNavigationAttributes.swift */,
+				BDA23DB71F4C071F00B89066 /* Bundle+JCBundle.swift */,
+				BDA23DB81F4C071F00B89066 /* UIView+IOSUtil.swift */,
+				BDA23DB91F4C071F00B89066 /* UIScrollView+JCScrollView.swift */,
+				BDA23DBA1F4C071F00B89066 /* UIResponder+JCResponder.swift */,
+				BDA23DBB1F4C071F00B89066 /* UIImageView+JCImageView.swift */,
+				BDA23DBC1F4C071F00B89066 /* FileManager+JCFileManager.swift */,
+				BDA23DBD1F4C071F00B89066 /* UITextView+JCTextView.swift */,
+				BDA23DBE1F4C071F00B89066 /* NSNumber+JCNumber.swift */,
+				BDA23DBF1F4C071F00B89066 /* NSString+IOSUtils.h */,
+				BDA23DC01F4C071F00B89066 /* UIView+Utils.h */,
+				BDA23DC11F4C071F00B89066 /* UIColor+JCColor.swift */,
+				BDA23DC21F4C071F00B89066 /* String+JCString.swift */,
+				BDA23DC31F4C071F00B89066 /* UIAlertController+IOSUtil.swift */,
+				BDA23DC41F4C071F00B89066 /* Draw+IOSUtil.swift */,
+				BDA23DC51F4C071F00B89066 /* UIColor+IOSUtils.m */,
+				BDA23DC61F4C071F00B89066 /* NSDate+JCDate.swift */,
+				BDA23DC71F4C071F00B89066 /* UIButton+IOSUtil.swift */,
+				BDA23DC81F4C071F00B89066 /* DragableTableExtension.swift */,
+				BDA23DC91F4C071F00B89066 /* Date+JCDate.swift */,
+				BDA23DCA1F4C071F00B89066 /* UIWebView+JCWebView.swift */,
+				BDA23DCB1F4C071F00B89066 /* NSString+IOSUtils.m */,
+				BDA23DCC1F4C071F00B89066 /* DispatchQueue+IOSUtil.swift */,
+				BDA23DCD1F4C071F00B89066 /* UITextField+JCTextField.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BDA23DCE1F4C071F00B89066 /* Swift下拉上提刷新 */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DCF1F4C071F00B89066 /* RHRefreshHeader.swift */,
+				BDA23DD01F4C071F00B89066 /* arrow@2x.png */,
+				BDA23DD11F4C071F00B89066 /* RHRefreshFooter.swift */,
+			);
+			path = "Swift下拉上提刷新";
+			sourceTree = "<group>";
+		};
+		BDA23DD51F4C071F00B89066 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DF51F4C089F00B89066 /* MeVC.swift */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		BDA23DD61F4C071F00B89066 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DD71F4C071F00B89066 /* XHTabBar.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		BDA23DD81F4C071F00B89066 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DD91F4C071F00B89066 /* ThridMacros.swift */,
+				BDA23DDA1F4C071F00B89066 /* ApiMacros.swift */,
+				BDA23DDB1F4C071F00B89066 /* JCSwiftKitMacro.swift */,
+				BDA23DDC1F4C071F00B89066 /* NotifiMacros.swift */,
+				BDA23DDD1F4C071F00B89066 /* SizeMacros.swift */,
+				BDA23DDE1F4C071F00B89066 /* PathMacros.swift */,
+				BDA23DDF1F4C071F00B89066 /* UtilMacros.swift */,
+				BDA23DE01F4C071F00B89066 /* SingtonMacros.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		BDA23DEF1F4C085700B89066 /* 收藏 */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DF11F4C088700B89066 /* FavoriteVC.swift */,
+			);
+			path = "收藏";
+			sourceTree = "<group>";
+		};
+		BDA23DF01F4C085700B89066 /* 本地 */ = {
+			isa = PBXGroup;
+			children = (
+				BDA23DF31F4C089200B89066 /* LocalVC.swift */,
+			);
+			path = "本地";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +383,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDA23D891F4C059200B89066 /* Build configuration list for PBXNativeTarget "myGifSwift" */;
 			buildPhases = (
+				AC00A67D63A096EFEF6D8D87 /* [CP] Check Pods Manifest.lock */,
 				BDA23D731F4C059200B89066 /* Sources */,
 				BDA23D741F4C059200B89066 /* Frameworks */,
 				BDA23D751F4C059200B89066 /* Resources */,
+				3B2043D0E3347EBEA3A917B7 /* [CP] Embed Pods Frameworks */,
+				22623C7C4B4E22504C7FDC6C /* [CP] Copy Pods Resources */,
+				BDA23DF71F4C094E00B89066 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -96,6 +412,7 @@
 				TargetAttributes = {
 					BDA23D761F4C059200B89066 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -122,44 +439,122 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA23D851F4C059200B89066 /* LaunchScreen.storyboard in Resources */,
 				BDA23D821F4C059200B89066 /* Assets.xcassets in Resources */,
-				BDA23D801F4C059200B89066 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22623C7C4B4E22504C7FDC6C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B2043D0E3347EBEA3A917B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC00A67D63A096EFEF6D8D87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myGifSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDA23DF71F4C094E00B89066 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDA23D731F4C059200B89066 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA23D7D1F4C059200B89066 /* ViewController.swift in Sources */,
+				BDA23DEE1F4C07B500B89066 /* ESPictureManager.m in Sources */,
+				BDA23DED1F4C07B100B89066 /* ESPictureProgressView.m in Sources */,
+				BDA23DEC1F4C07AD00B89066 /* ESPictureView.m in Sources */,
+				BDA23DEB1F4C07A600B89066 /* ESPictureBrowser.m in Sources */,
+				BDA23DF21F4C088700B89066 /* FavoriteVC.swift in Sources */,
+				BDA23DF41F4C089200B89066 /* LocalVC.swift in Sources */,
+				BDA23DEA1F4C07A000B89066 /* Tooles.m in Sources */,
+				BDA23DE91F4C079C00B89066 /* ProgressHUD.m in Sources */,
+				BDA23DE81F4C079700B89066 /* NSString+IOSUtils.m in Sources */,
+				BDA23DE71F4C079200B89066 /* UIColor+IOSUtils.m in Sources */,
+				BDA23DF61F4C089F00B89066 /* MeVC.swift in Sources */,
+				BDA23DE61F4C078D00B89066 /* UIView+Utils.m in Sources */,
+				BDA23DE51F4C078700B89066 /* EmptyView.m in Sources */,
 				BDA23D7B1F4C059200B89066 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		BDA23D7E1F4C059200B89066 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BDA23D7F1F4C059200B89066 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BDA23D831F4C059200B89066 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BDA23D841F4C059200B89066 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BDA23D871F4C059200B89066 /* Debug */ = {
@@ -208,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -257,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -267,29 +662,42 @@
 		};
 		BDA23D8A1F4C059200B89066 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A2DF8133E0B7DBFD87A222D /* Pods-myGifSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7A99V6896N;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = myGifSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.myGifSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "myGifSwift/myGifSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BDA23D8B1F4C059200B89066 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 847F258FFD16C60E0E7671E2 /* Pods-myGifSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7A99V6896N;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = myGifSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.myGifSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "myGifSwift/myGifSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -312,6 +720,7 @@
 				BDA23D8B1F4C059200B89066 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

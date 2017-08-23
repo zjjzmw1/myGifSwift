@@ -7,3 +7,5 @@
 #import "ProgressHUD.h"
 #import "UIView+Utils.h"
 #import <YYKit/YYkit.h>
+
+#import <BmobSDK/Bmob.h>

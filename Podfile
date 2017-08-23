@@ -35,4 +35,7 @@ pod 'Bugly', '~> 2.4.6'
 pod 'YYKit', '~> 1.0.9',:inhibit_warnings => true
 pod 'Masonry', '~> 1.0.2'
 
+# 后端Bmob SDK
+pod 'BmobSDK', '~> 2.2.1'
+
 end

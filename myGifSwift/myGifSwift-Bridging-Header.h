@@ -7,5 +7,6 @@
 #import "ProgressHUD.h"
 #import "UIView+Utils.h"
 #import <YYKit/YYkit.h>
-
+#import "UIView+Utils.h"
+#import "PSVisualCell.h"
 #import <BmobSDK/Bmob.h>

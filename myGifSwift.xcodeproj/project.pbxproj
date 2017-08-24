@@ -10,6 +10,7 @@
 		186F863C9BF6536D3746A4E6 /* Pods_myGifSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60FB2CE5169BEB3ED2D93A1 /* Pods_myGifSwift.framework */; };
 		BD94916B1F4D2D95004F6566 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916A1F4D2D95004F6566 /* HomeVC.swift */; };
 		BD94916D1F4D2E1D004F6566 /* JHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */; };
+		BD9491731F4D636B004F6566 /* PSVisualCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9491721F4D636B004F6566 /* PSVisualCell.m */; };
 		BDA23D7B1F4C059200B89066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D7A1F4C059200B89066 /* AppDelegate.swift */; };
 		BDA23D821F4C059200B89066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D811F4C059200B89066 /* Assets.xcassets */; };
 		BDA23DE51F4C078700B89066 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D8F1F4C071F00B89066 /* EmptyView.m */; };
@@ -65,6 +66,7 @@
 		BDE15C551F4C34700070D1C7 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C541F4C34700070D1C7 /* ProgressHUD.m */; };
 		BDE15C591F4C34B30070D1C7 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C561F4C34B30070D1C7 /* Tool.swift */; };
 		BDE15C5A1F4C34B30070D1C7 /* Tooles.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C581F4C34B30070D1C7 /* Tooles.m */; };
+		BDEA19FF1F4E628E0078451D /* MyGifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA19FE1F4E628E0078451D /* MyGifModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		8A2DF8133E0B7DBFD87A222D /* Pods-myGifSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myGifSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		BD94916A1F4D2D95004F6566 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHNetwork.swift; sourceTree = "<group>"; };
+		BD9491711F4D636B004F6566 /* PSVisualCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSVisualCell.h; sourceTree = "<group>"; };
+		BD9491721F4D636B004F6566 /* PSVisualCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSVisualCell.m; sourceTree = "<group>"; };
 		BDA23D771F4C059200B89066 /* myGifSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGifSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA23D7A1F4C059200B89066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDA23D811F4C059200B89066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 		BDE15C561F4C34B30070D1C7 /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		BDE15C571F4C34B30070D1C7 /* Tooles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tooles.h; sourceTree = "<group>"; };
 		BDE15C581F4C34B30070D1C7 /* Tooles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tooles.m; sourceTree = "<group>"; };
+		BDEA19FE1F4E628E0078451D /* MyGifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGifModel.swift; sourceTree = "<group>"; };
 		C60FB2CE5169BEB3ED2D93A1 /* Pods_myGifSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myGifSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -180,6 +185,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BD9491701F4D6344004F6566 /* 视觉差效果cell */ = {
+			isa = PBXGroup;
+			children = (
+				BD9491711F4D636B004F6566 /* PSVisualCell.h */,
+				BD9491721F4D636B004F6566 /* PSVisualCell.m */,
+			);
+			path = "视觉差效果cell";
+			sourceTree = "<group>";
+		};
 		BDA23D6E1F4C059200B89066 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +217,7 @@
 			children = (
 				BDA23D7A1F4C059200B89066 /* AppDelegate.swift */,
 				BDA23DE11F4C075900B89066 /* myGifSwift-Bridging-Header.h */,
+				BDEA19FD1F4E624A0078451D /* 后端返回的model */,
 				BDA23D911F4C071F00B89066 /* 首页 */,
 				BDA23DEF1F4C085700B89066 /* 收藏 */,
 				BDA23DF01F4C085700B89066 /* 本地 */,
@@ -256,6 +271,7 @@
 		BDA23D951F4C071F00B89066 /* MyFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD9491701F4D6344004F6566 /* 视觉差效果cell */,
 				BDA23D961F4C071F00B89066 /* ProgressHUD */,
 				BDA23D9F1F4C071F00B89066 /* KDInteractiveNavigationController */,
 				BDA23DA21F4C071F00B89066 /* ESPictureBrowser */,
@@ -416,6 +432,14 @@
 				BDE15BE91F4C307C0070D1C7 /* LocalVC.swift */,
 			);
 			path = "本地";
+			sourceTree = "<group>";
+		};
+		BDEA19FD1F4E624A0078451D /* 后端返回的model */ = {
+			isa = PBXGroup;
+			children = (
+				BDEA19FE1F4E628E0078451D /* MyGifModel.swift */,
+			);
+			path = "后端返回的model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +607,7 @@
 				BDE15C521F4C34610070D1C7 /* UIViewController+InteractiveNavigation.swift in Sources */,
 				BDE15C5A1F4C34B30070D1C7 /* Tooles.m in Sources */,
 				BDE15C1F1F4C33720070D1C7 /* UIColor+IOSUtils.m in Sources */,
+				BDEA19FF1F4E628E0078451D /* MyGifModel.swift in Sources */,
 				BDE15BEA1F4C307C0070D1C7 /* LocalVC.swift in Sources */,
 				BDE15C1D1F4C33720070D1C7 /* UIAlertController+IOSUtil.swift in Sources */,
 				BDE15C201F4C33720070D1C7 /* UIColor+JCColor.swift in Sources */,
@@ -611,6 +636,7 @@
 				BDE15C131F4C33720070D1C7 /* Date+JCDate.swift in Sources */,
 				BDE15BF01F4C31950070D1C7 /* RHRefreshFooter.swift in Sources */,
 				BDE15C511F4C34610070D1C7 /* KDInteractiveNavigationController.swift in Sources */,
+				BD9491731F4D636B004F6566 /* PSVisualCell.m in Sources */,
 				BD94916B1F4D2D95004F6566 /* HomeVC.swift in Sources */,
 				BDE15C3E1F4C34200070D1C7 /* XHTabBar.swift in Sources */,
 				BDE15C251F4C33720070D1C7 /* UIResponder+JCResponder.swift in Sources */,

@@ -29,7 +29,7 @@ class BaseViewController: UIViewController {
     }
     override var prefersStatusBarHidden: Bool {
         get {
-            return true
+            return false // 不能因此，因为还需要看网络，时间等信息。
         }
     }
     

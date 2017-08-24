@@ -41,7 +41,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
         tableView.sectionFooterHeight = 0.1
         tableView.backgroundColor = UIColor.getBackgroundColorSwift()
         
-        // 下拉刷新
+        // 下拉刷新 -- 绚丽的，暂时不用
 //        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
 //        loadingView.tintColor = UIColor.white
 //        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
@@ -50,7 +50,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 //        tableView.dg_setPullToRefreshFillColor(UIColor.getMainColorSwift())
 //        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
         
-        // 上提刷新
+        // 下拉、上提刷新
         refreshControl = ZJRefreshControl(scrollView: tableView, refreshBlock: {
             self.requestAction()
         }, loadmoreBlock: {
@@ -98,7 +98,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     func requestAction() {
         let bquery = BmobQuery.init(className: "MyGif")
         bquery?.findObjectsInBackground({ [weak self] (resultArr, error) in
-            self?.tableView.dg_stopLoading()
+//            self?.tableView.dg_stopLoading()
             self?.refreshControl.endRefreshing()
             if let resultArr = resultArr {
                 self?.dataArr = NSMutableArray.init()
@@ -114,7 +114,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     func requestMoreAction() {
         let bquery = BmobQuery.init(className: "MyGif")
         bquery?.findObjectsInBackground({ [weak self] (resultArr, error) in
-            self?.tableView.dg_stopLoading()
+//            self?.tableView.dg_stopLoading()
             self?.refreshControl.endLoadingmore()
             if let resultArr = resultArr {
                 for i in 0 ..< resultArr.count {
@@ -130,9 +130,14 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
         if self.dataArr.count > 0 {
             Tool.saveHandyModelArrayToJSON(modelArray: self.dataArr, fileName: "MyGif") // 保存动图列表
         } else {
-           let arr = Tool.getHandyModelArrayFromFile(fileName: "MyGif") // 获取动图列表
+           self.dataArr = NSMutableArray.init()
+           let arr = Tool.getHandyModelArrayFromFile(fileName: "MyGif") // 获取动图列表 - 里面其实是字典，需要转为model才OK
             if let arr = arr, arr.count > 0 {
-                self.dataArr = NSMutableArray.init(array: arr)
+                for dict in arr {
+                    if let dict = dict as? NSDictionary, let model = MyGifModel.deserialize(from: dict) {
+                        self.dataArr.add(model)
+                    }
+                }
             }
         }
         self.tableView.reloadData()

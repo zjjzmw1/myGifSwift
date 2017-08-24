@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import DGElasticPullToRefresh
 
 class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     var tableView: UITableView!
     var dataArr: NSMutableArray!
     
+    var refreshControl:ZJRefreshControl!;
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fd_prefersNavigationBarHidden = true; // 隐藏导航栏
         self.initTableViewAndData()
+        self.requestAction()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.requestAction()
     }
     
     func initTableViewAndData() {
@@ -35,6 +39,24 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
         tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0.1))
         tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0.1))
         tableView.sectionFooterHeight = 0.1
+        tableView.backgroundColor = UIColor.getBackgroundColorSwift()
+        
+        // 下拉刷新
+//        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+//        loadingView.tintColor = UIColor.white
+//        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+//            self?.requestAction()
+//            }, loadingView: loadingView)
+//        tableView.dg_setPullToRefreshFillColor(UIColor.getMainColorSwift())
+//        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
+        
+        // 上提刷新
+        refreshControl = ZJRefreshControl(scrollView: tableView, refreshBlock: {
+            self.requestAction()
+        }, loadmoreBlock: {
+            self.requestMoreAction()
+        })
+        
     }
     
     // MARK: 表格代理相关
@@ -76,6 +98,8 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     func requestAction() {
         let bquery = BmobQuery.init(className: "MyGif")
         bquery?.findObjectsInBackground({ [weak self] (resultArr, error) in
+            self?.tableView.dg_stopLoading()
+            self?.refreshControl.endRefreshing()
             if let resultArr = resultArr {
                 self?.dataArr = NSMutableArray.init()
                 for i in 0 ..< resultArr.count {
@@ -83,8 +107,39 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
                     self?.dataArr.add(mygifM ?? MyGifModel.init())
                 }
             }
-            self?.tableView.reloadData()
+            self?.refreshAction()
         })
     }
-
+    
+    func requestMoreAction() {
+        let bquery = BmobQuery.init(className: "MyGif")
+        bquery?.findObjectsInBackground({ [weak self] (resultArr, error) in
+            self?.tableView.dg_stopLoading()
+            self?.refreshControl.endLoadingmore()
+            if let resultArr = resultArr {
+                for i in 0 ..< resultArr.count {
+                    let mygifM = MyGifModel.deserialize(from: (resultArr[i] as! BmobObject).modelToJSONString())
+                    self?.dataArr.add(mygifM ?? MyGifModel.init())
+                }
+            }
+            self?.refreshAction()
+        })
+    }
+    
+    func refreshAction() {
+        if self.dataArr.count > 0 {
+            Tool.saveHandyModelArrayToJSON(modelArray: self.dataArr, fileName: "MyGif") // 保存动图列表
+        } else {
+           let arr = Tool.getHandyModelArrayFromFile(fileName: "MyGif") // 获取动图列表
+            if let arr = arr, arr.count > 0 {
+                self.dataArr = NSMutableArray.init(array: arr)
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
+    deinit {
+        tableView.dg_removePullToRefresh()
+    }
+    
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		186F863C9BF6536D3746A4E6 /* Pods_myGifSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60FB2CE5169BEB3ED2D93A1 /* Pods_myGifSwift.framework */; };
+		BD8815AE1F4EA27200A6CA9A /* ZJRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8815AD1F4EA27200A6CA9A /* ZJRefreshControl.swift */; };
 		BD94916B1F4D2D95004F6566 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916A1F4D2D95004F6566 /* HomeVC.swift */; };
 		BD94916D1F4D2E1D004F6566 /* JHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */; };
 		BD9491731F4D636B004F6566 /* PSVisualCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9491721F4D636B004F6566 /* PSVisualCell.m */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		847F258FFD16C60E0E7671E2 /* Pods-myGifSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myGifSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift.release.xcconfig"; sourceTree = "<group>"; };
 		8A2DF8133E0B7DBFD87A222D /* Pods-myGifSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myGifSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		BD8815AD1F4EA27200A6CA9A /* ZJRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJRefreshControl.swift; sourceTree = "<group>"; };
 		BD94916A1F4D2D95004F6566 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHNetwork.swift; sourceTree = "<group>"; };
 		BD9491711F4D636B004F6566 /* PSVisualCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSVisualCell.h; sourceTree = "<group>"; };
@@ -191,6 +193,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BD8815AC1F4EA25C00A6CA9A /* ZJRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				BD8815AD1F4EA27200A6CA9A /* ZJRefreshControl.swift */,
+			);
+			path = ZJRefreshControl;
+			sourceTree = "<group>";
+		};
 		BD9491701F4D6344004F6566 /* 视觉差效果cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +287,7 @@
 		BDA23D951F4C071F00B89066 /* MyFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD8815AC1F4EA25C00A6CA9A /* ZJRefreshControl */,
 				BDEA1A001F4E75150078451D /* FDFullscreenPopGesture */,
 				BD9491701F4D6344004F6566 /* 视觉差效果cell */,
 				BDA23D961F4C071F00B89066 /* ProgressHUD */,
@@ -554,6 +565,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/DGElasticPullToRefresh/DGElasticPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -568,6 +580,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGElasticPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -664,6 +677,7 @@
 				BDE15BEC1F4C308C0070D1C7 /* MeVC.swift in Sources */,
 				BDE15C551F4C34700070D1C7 /* ProgressHUD.m in Sources */,
 				BDA23DE51F4C078700B89066 /* EmptyView.m in Sources */,
+				BD8815AE1F4EA27200A6CA9A /* ZJRefreshControl.swift in Sources */,
 				BDE15C2B1F4C33720070D1C7 /* UIWebView+JCWebView.swift in Sources */,
 				BDE15BE81F4C30620070D1C7 /* FavoriteVC.swift in Sources */,
 				BDE15C341F4C33EA0070D1C7 /* ApiMacros.swift in Sources */,

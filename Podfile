@@ -38,4 +38,6 @@ pod 'Masonry', '~> 1.0.2'
 # 后端Bmob SDK
 pod 'BmobSDK', '~> 2.2.1'
 
+pod 'DGElasticPullToRefresh', '~> 1.1'
+
 end

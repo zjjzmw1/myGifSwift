@@ -27,6 +27,11 @@ class BaseViewController: UIViewController {
             return.lightContent
         }
     }
+    override var prefersStatusBarHidden: Bool {
+        get {
+            return true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

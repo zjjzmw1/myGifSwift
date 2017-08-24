@@ -518,12 +518,13 @@
  *  @param isWhiteColor YES:白色、NO:黑色
  */
 + (void)setStatusBarTitleColorIsWhiteColor:(BOOL)isWhiteColor {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    if (isWhiteColor) {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    } else {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    }
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+//    [UIViewController prefersStatusBarHidden];
+//    if (isWhiteColor) {
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//    } else {
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+//    }
 }
 
 #pragma mark - masonry 布局的控件的便利方法 --------------------BEGIN---------------

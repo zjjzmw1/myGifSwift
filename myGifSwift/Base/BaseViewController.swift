@@ -21,6 +21,13 @@ class BaseViewController: UIViewController {
     var currentPage: Int = 0    // 当前页数
     var emptyView: EmptyView!   // 空页面
     
+    // ios9需要重写属性。
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return.lightContent
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 默认是带的
@@ -43,6 +50,7 @@ class BaseViewController: UIViewController {
         self.emptyView.isHidden = true
         self.emptyView.image(nil, label: nil)
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -163,6 +171,7 @@ class BaseViewController: UIViewController {
             })
         }
     }
+    
     
     /// 可以查看某个页面是否引起的循环引用
     deinit {

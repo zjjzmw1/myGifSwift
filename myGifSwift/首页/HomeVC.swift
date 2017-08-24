@@ -15,7 +15,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addTitle(titleString: NSLocalizedString("我的行程", comment: ""))
+        self.fd_prefersNavigationBarHidden = true; // 隐藏导航栏
         self.initTableViewAndData()
     }
     
@@ -26,7 +26,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     func initTableViewAndData() {
         dataArr = NSMutableArray()
-        tableView = UITableView(frame: CGRect.init(x: 0, y: NAVIGATIONBAR_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - NAVIGATIONBAR_HEIGHT - TABBAR_HEIGHT), style: .grouped)
+        tableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 0 - TABBAR_HEIGHT), style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)

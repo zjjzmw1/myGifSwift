@@ -67,6 +67,8 @@
 		BDE15C591F4C34B30070D1C7 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C561F4C34B30070D1C7 /* Tool.swift */; };
 		BDE15C5A1F4C34B30070D1C7 /* Tooles.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C581F4C34B30070D1C7 /* Tooles.m */; };
 		BDEA19FF1F4E628E0078451D /* MyGifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA19FE1F4E628E0078451D /* MyGifModel.swift */; };
+		BDEA1A091F4E754C0078451D /* FDDemoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEA1A061F4E753E0078451D /* FDDemoScrollView.m */; };
+		BDEA1A0A1F4E75500078451D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEA1A051F4E753E0078451D /* UINavigationController+FDFullscreenPopGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +155,10 @@
 		BDE15C571F4C34B30070D1C7 /* Tooles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tooles.h; sourceTree = "<group>"; };
 		BDE15C581F4C34B30070D1C7 /* Tooles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tooles.m; sourceTree = "<group>"; };
 		BDEA19FE1F4E628E0078451D /* MyGifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGifModel.swift; sourceTree = "<group>"; };
+		BDEA1A051F4E753E0078451D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		BDEA1A061F4E753E0078451D /* FDDemoScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDDemoScrollView.m; sourceTree = "<group>"; };
+		BDEA1A071F4E753E0078451D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		BDEA1A081F4E753E0078451D /* FDDemoScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDDemoScrollView.h; sourceTree = "<group>"; };
 		C60FB2CE5169BEB3ED2D93A1 /* Pods_myGifSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myGifSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -271,6 +277,7 @@
 		BDA23D951F4C071F00B89066 /* MyFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDEA1A001F4E75150078451D /* FDFullscreenPopGesture */,
 				BD9491701F4D6344004F6566 /* 视觉差效果cell */,
 				BDA23D961F4C071F00B89066 /* ProgressHUD */,
 				BDA23D9F1F4C071F00B89066 /* KDInteractiveNavigationController */,
@@ -442,6 +449,17 @@
 			path = "后端返回的model";
 			sourceTree = "<group>";
 		};
+		BDEA1A001F4E75150078451D /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				BDEA1A081F4E753E0078451D /* FDDemoScrollView.h */,
+				BDEA1A061F4E753E0078451D /* FDDemoScrollView.m */,
+				BDEA1A071F4E753E0078451D /* UINavigationController+FDFullscreenPopGesture.h */,
+				BDEA1A051F4E753E0078451D /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -603,6 +621,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDEA1A0A1F4E75500078451D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				BDEA1A091F4E754C0078451D /* FDDemoScrollView.m in Sources */,
 				BDE15C281F4C33720070D1C7 /* UITextView+JCTextView.swift in Sources */,
 				BDE15C521F4C34610070D1C7 /* UIViewController+InteractiveNavigation.swift in Sources */,
 				BDE15C5A1F4C34B30070D1C7 /* Tooles.m in Sources */,

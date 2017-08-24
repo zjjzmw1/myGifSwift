@@ -6,7 +6,9 @@
 #import "Tooles.h"
 #import "ProgressHUD.h"
 #import "UIView+Utils.h"
-#import <YYKit/YYkit.h>
 #import "UIView+Utils.h"
 #import "PSVisualCell.h"
+#import <YYKit/YYKit.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
 #import <BmobSDK/Bmob.h>

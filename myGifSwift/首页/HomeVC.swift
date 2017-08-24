@@ -85,6 +85,28 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        let cell = tableView.cellForRow(at: indexPath) as! PSVisualCell
+        let myGifM = self.dataArr.object(at: indexPath.row) as? MyGifModel
+        let urlArr = NSMutableArray.init()
+        for i in 0 ..< self.dataArr.count {
+            let model = self.dataArr.object(at: i) as? MyGifModel
+            if let url = model?.dataDic?.image?.url {
+                urlArr.add(url)
+            }
+        }
+        if let urlStr = myGifM?.dataDic?.image?.url {
+            var currentIndex = 0
+            var urlCount = 1
+            if urlArr.count > 1 {
+                urlCount = urlArr.count
+            }
+            if urlCount > indexPath.row {
+                currentIndex = indexPath.row
+            }
+            // 大图浏览器
+            Tooles.showBigImage(cell.backgroundImageView, bigImageUrl: urlStr, bigImageUrlArray: urlArr as! [Any], pictureCount: Int32(urlCount), currentIndex: Int32(currentIndex))
+        }
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -10,6 +10,9 @@
 
 @interface PSVisualCell : UITableViewCell
 
+@property (nonatomic, strong) UIImageView      *backgroundImageView;
+@property (nonatomic, strong) UILabel          *label;
+
 - (void)reloadBackgroundImage:(UIImage *)image description:(NSString *)des;
 
 - (void)reloadBackgroundImageUrl:(NSString *)urlStr description:(NSString *)des;

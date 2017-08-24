@@ -15,9 +15,6 @@ static CGFloat const kImageViewHeight = 300;
 
 @interface PSVisualCell ()
     
-@property (nonatomic, strong) UIImageView *backgroundImageView;
-@property (nonatomic, strong) UILabel *label;
-
 @end
 
 @implementation PSVisualCell

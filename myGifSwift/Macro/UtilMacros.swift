@@ -13,6 +13,7 @@ let IS_IOS7 = (UIDevice.current.systemVersion as NSString).doubleValue >= 7.0
 let IS_IOS8 = (UIDevice.current.systemVersion as NSString).doubleValue >= 8.0
 let IS_IOS9 = (UIDevice.current.systemVersion as NSString).doubleValue >= 9.0
 let IS_IOS10 = (UIDevice.current.systemVersion as NSString).doubleValue >= 10.0
+let IS_IOS11 = (UIDevice.current.systemVersion as NSString).doubleValue >= 11.0
 
 /// 获取字体的方法
 public func FONT_PingFang(fontSize: CGFloat) -> UIFont {

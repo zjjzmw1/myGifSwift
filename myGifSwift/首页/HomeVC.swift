@@ -37,6 +37,9 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     func initTableViewAndData() {
         dataArr = NSMutableArray()
         tableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 0 - TABBAR_HEIGHT), style: .grouped)
+        if IS_IOS11 {
+            tableView.frame = CGRect.init(x: 0, y: -20, width: SCREEN_WIDTH, height: SCREEN_HEIGHT + 20 - TABBAR_HEIGHT)
+        }
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)

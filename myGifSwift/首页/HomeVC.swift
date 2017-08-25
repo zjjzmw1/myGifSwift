@@ -129,7 +129,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     func requestAction() {
         let bquery = BmobQuery.init(className: "MyGif")
-        bquery?.limit = 8
+        bquery?.limit = 20
         bquery?.order(byDescending: "updatedAt")
         bquery?.findObjectsInBackground({ [weak self] (resultArr, error) in
 //            self?.tableView.dg_stopLoading()

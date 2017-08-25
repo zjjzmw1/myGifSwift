@@ -12,6 +12,7 @@
 		BD94916B1F4D2D95004F6566 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916A1F4D2D95004F6566 /* HomeVC.swift */; };
 		BD94916D1F4D2E1D004F6566 /* JHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */; };
 		BD9491731F4D636B004F6566 /* PSVisualCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9491721F4D636B004F6566 /* PSVisualCell.m */; };
+		BD9D2AF01F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D2AEF1F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift */; };
 		BDA23D7B1F4C059200B89066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D7A1F4C059200B89066 /* AppDelegate.swift */; };
 		BDA23D821F4C059200B89066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D811F4C059200B89066 /* Assets.xcassets */; };
 		BDA23DE51F4C078700B89066 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D8F1F4C071F00B89066 /* EmptyView.m */; };
@@ -33,7 +34,6 @@
 		BDE15C1A1F4C33720070D1C7 /* NSNumber+JCNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15BFC1F4C33720070D1C7 /* NSNumber+JCNumber.swift */; };
 		BDE15C1B1F4C33720070D1C7 /* NSString+IOSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE15BFE1F4C33720070D1C7 /* NSString+IOSUtils.m */; };
 		BDE15C1C1F4C33720070D1C7 /* String+JCString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15BFF1F4C33720070D1C7 /* String+JCString.swift */; };
-		BDE15C1D1F4C33720070D1C7 /* UIAlertController+IOSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C001F4C33720070D1C7 /* UIAlertController+IOSUtil.swift */; };
 		BDE15C1E1F4C33720070D1C7 /* UIButton+IOSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C011F4C33720070D1C7 /* UIButton+IOSUtil.swift */; };
 		BDE15C1F1F4C33720070D1C7 /* UIColor+IOSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C031F4C33720070D1C7 /* UIColor+IOSUtils.m */; };
 		BDE15C201F4C33720070D1C7 /* UIColor+JCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15C041F4C33720070D1C7 /* UIColor+JCColor.swift */; };
@@ -80,6 +80,7 @@
 		BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHNetwork.swift; sourceTree = "<group>"; };
 		BD9491711F4D636B004F6566 /* PSVisualCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSVisualCell.h; sourceTree = "<group>"; };
 		BD9491721F4D636B004F6566 /* PSVisualCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSVisualCell.m; sourceTree = "<group>"; };
+		BD9D2AEF1F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+IOSUtil.swift"; sourceTree = "<group>"; };
 		BDA23D771F4C059200B89066 /* myGifSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGifSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA23D7A1F4C059200B89066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDA23D811F4C059200B89066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		BDE15BFD1F4C33720070D1C7 /* NSString+IOSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IOSUtils.h"; sourceTree = "<group>"; };
 		BDE15BFE1F4C33720070D1C7 /* NSString+IOSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IOSUtils.m"; sourceTree = "<group>"; };
 		BDE15BFF1F4C33720070D1C7 /* String+JCString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JCString.swift"; sourceTree = "<group>"; };
-		BDE15C001F4C33720070D1C7 /* UIAlertController+IOSUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+IOSUtil.swift"; sourceTree = "<group>"; };
 		BDE15C011F4C33720070D1C7 /* UIButton+IOSUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+IOSUtil.swift"; sourceTree = "<group>"; };
 		BDE15C021F4C33720070D1C7 /* UIColor+IOSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IOSUtils.h"; sourceTree = "<group>"; };
 		BDE15C031F4C33720070D1C7 /* UIColor+IOSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+IOSUtils.m"; sourceTree = "<group>"; };
@@ -361,6 +361,7 @@
 		BDA23DAF1F4C071F00B89066 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BD9D2AEF1F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift */,
 				BDE15BF31F4C33720070D1C7 /* Bundle+JCBundle.swift */,
 				BDE15BF41F4C33720070D1C7 /* Data+JCData.swift */,
 				BDE15BF51F4C33720070D1C7 /* Date+JCDate.swift */,
@@ -374,7 +375,6 @@
 				BDE15BFD1F4C33720070D1C7 /* NSString+IOSUtils.h */,
 				BDE15BFE1F4C33720070D1C7 /* NSString+IOSUtils.m */,
 				BDE15BFF1F4C33720070D1C7 /* String+JCString.swift */,
-				BDE15C001F4C33720070D1C7 /* UIAlertController+IOSUtil.swift */,
 				BDE15C011F4C33720070D1C7 /* UIButton+IOSUtil.swift */,
 				BDE15C021F4C33720070D1C7 /* UIColor+IOSUtils.h */,
 				BDE15C031F4C33720070D1C7 /* UIColor+IOSUtils.m */,
@@ -642,7 +642,6 @@
 				BDE15C1F1F4C33720070D1C7 /* UIColor+IOSUtils.m in Sources */,
 				BDEA19FF1F4E628E0078451D /* MyGifModel.swift in Sources */,
 				BDE15BEA1F4C307C0070D1C7 /* LocalVC.swift in Sources */,
-				BDE15C1D1F4C33720070D1C7 /* UIAlertController+IOSUtil.swift in Sources */,
 				BDE15C201F4C33720070D1C7 /* UIColor+JCColor.swift in Sources */,
 				BDE15C291F4C33720070D1C7 /* UIView+IOSUtil.swift in Sources */,
 				BDE15C1E1F4C33720070D1C7 /* UIButton+IOSUtil.swift in Sources */,
@@ -654,6 +653,7 @@
 				BDE15C221F4C33720070D1C7 /* UIImageView+JCImageView.swift in Sources */,
 				BDE15BEE1F4C30C40070D1C7 /* BaseViewController.swift in Sources */,
 				BDE15C261F4C33720070D1C7 /* UIScrollView+JCScrollView.swift in Sources */,
+				BD9D2AF01F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift in Sources */,
 				BDE15C4B1F4C34540070D1C7 /* ESPictureBrowser.m in Sources */,
 				BDE15C1C1F4C33720070D1C7 /* String+JCString.swift in Sources */,
 				BDE15C181F4C33720070D1C7 /* NSDate+JCDate.swift in Sources */,

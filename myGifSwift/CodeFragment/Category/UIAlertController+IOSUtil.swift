@@ -1,8 +1,8 @@
 //
 //  UIAlertController+IOSUtil.swift
-//  niaoyutong
+//  myGifSwift
 //
-//  Created by zhangmingwei on 2017/5/24.
+//  Created by zhangmingwei on 2017/8/24.
 //  Copyright © 2017年 niaoyutong. All rights reserved.
 //
 
@@ -25,5 +25,5 @@ extension UIAlertController {
     public func showAlertC(vc: UIViewController!, completion: (() -> Void)?) {
         vc.present(self, animated: true, completion: completion)
     }
-
+    
 }

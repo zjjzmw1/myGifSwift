@@ -107,7 +107,9 @@
     self.picturesCount = picturesCount;
     [self setPageText:currentPictureIndex];
     // 添加到 window 上
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
+//    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    // 上面添加到keywindow上会把alertC挡住。
+    [fromView.viewController.view addSubview:self];
     // 计算 scrollView 的 contentSize
     self.scrollView.contentSize = CGSizeMake(picturesCount * _scrollView.frame.size.width, _scrollView.frame.size.height);
     // 滚动到指定位置
@@ -162,12 +164,18 @@
 #pragma mark - 监听事件
 
 - (void)tapGes:(UITapGestureRecognizer *)ges {
+    
+    // 发送通知：
+//    NotificationCenter.default.post(name: Notification.Name(rawValue: "kBigImageDismissNofi"), object: "")
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kBigImageDismissNofi" object:@""];
     [self dismiss];
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)ges {
     if (ges.state == UIGestureRecognizerStateEnded) {
         if (self.longPressBlock) {
+            // 获取长按的图片的image
+//            self.currentLongPressImage = ((ESPictureView *)self.scrollView.subviews[]).imageView.image;
             self.longPressBlock(_currentPage);
         }
     }
@@ -252,12 +260,16 @@
         view.pictureSize = [_delegate pictureView:self imageSizeForIndex:index];
     }else if ([_delegate respondsToSelector:@selector(pictureView:defaultImageForIndex:)]) {
         UIImage *image = [_delegate pictureView:self defaultImageForIndex:index];
+        // 把当前的图片赋值过来
+        self.currentLongPressImage = image;
         // 2. 如果没有实现，判断是否有默认图片，获取默认图片大小
         setImageSizeBlock(image);
     } else if ([_delegate respondsToSelector:@selector(pictureView:viewForIndex:)]) {
         UIView *v = [_delegate pictureView:self viewForIndex:index];
         if ([v isKindOfClass:[UIImageView class]]) {
             UIImage *image = ((UIImageView *)v).image;
+            // 把当前的图片赋值过来
+            self.currentLongPressImage = image;
             setImageSizeBlock(image);
             // 并且设置占位图片
             view.placeholderImage = image;
@@ -270,6 +282,8 @@
     // 设置占位图
     if ([_delegate respondsToSelector:@selector(pictureView:defaultImageForIndex:)]) {
         view.placeholderImage = [_delegate pictureView:self defaultImageForIndex:index];
+        // 把当前的图片赋值过来
+        self.currentLongPressImage = view.placeholderImage;
     }
     
     view.urlString = [_delegate pictureView:self highQualityUrlStringForIndex:index];

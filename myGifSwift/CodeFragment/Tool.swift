@@ -12,6 +12,8 @@ import SwiftyJSON
 import HandyJSON
 import MediaPlayer
 import MapKit
+import AssetsLibrary
+
 
 /// 网络返回的成功码
 let kSuccessCode = 200
@@ -590,6 +592,25 @@ public class Tool: NSObject,UIActionSheetDelegate {
         }
     }
     
-    
-    
+    /// 弹出收藏、保存本地的控件
+    public class func showAlertC(urlStr: String, currentImage: UIImage) {
+        let alertC = UIAlertController.initAlertC(title: nil, msg: nil, style: .actionSheet)
+        alertC.addMyAction(title: "收藏", style: .default) { (alertA) in
+            
+        }
+        alertC.addMyAction(title: "保存到本地", style: .default) { (alertA) in
+            // ios 保存动态图片
+            let library = ALAssetsLibrary.init()
+            library.writeImageData(toSavedPhotosAlbum: currentImage.imageDataRepresentation(), metadata: nil, completionBlock: { (url, error) in
+                if error == nil {
+                    ProgressHUD.showSuccess("保存成功")
+                } else {
+                    ProgressHUD.showError("保存失败")
+                }
+            })
+        }
+        alertC.addMyAction(title: "取消", style: .cancel)
+        let vc = UIApplication.shared.keyWindow?.rootViewController
+        alertC.showAlertC(vc: vc, completion: nil)
+    }
 }

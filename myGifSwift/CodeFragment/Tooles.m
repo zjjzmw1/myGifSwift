@@ -23,7 +23,7 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 
-//#import "AppDelegate.h"
+#import "myGifSwift-Swift.h"
 
 @interface Tooles ()
 
@@ -117,73 +117,74 @@
     return [file writeToFile:filename atomically:YES];
 }
 
-+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)file {
-    NSString *Path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *CachePath = [filePath stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
-    NSString *filename = [Path stringByAppendingPathComponent:CachePath];
-    
-    if ([file isKindOfClass:[NSMutableDictionary class]]) {
-        [file setDictionary:[NSMutableDictionary dictionaryWithContentsOfFile:filename]];
-        
-        if ([file count] == 0) {
-            return NO;
-        }
-    } else if ([file isKindOfClass:[NSMutableArray class]]) {
-        [file addObjectsFromArray:[NSMutableArray arrayWithContentsOfFile:filename]];
-        
-        if ([file count] == 0) {
-            return NO;
-        }
-    } else if ([file isKindOfClass:[NSData class]]) {
-        file = [NSData dataWithContentsOfFile:filename];
-        
-        if ([file length] == 0) {
-            return NO;
-        }
-    }
-    
-    return YES;
-}
+//+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)file {
+//    NSString *Path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    NSString *CachePath = [filePath stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+//    NSString *filename = [Path stringByAppendingPathComponent:CachePath];
+//
+//    if ([file isKindOfClass:[NSMutableDictionary class]]) {
+//        [file setDictionary:[NSMutableDictionary dictionaryWithContentsOfFile:filename]];
+//
+//        if ((int)[file count] == 0) {
+//            return NO;
+//        }
+//
+//    } else if ([file isKindOfClass:[NSMutableArray class]]) {
+//        [file addObjectsFromArray:[NSMutableArray arrayWithContentsOfFile:filename]];
+//
+//        if ((int)[file count] == 0) {
+//            return NO;
+//        }
+//    } else if ([file isKindOfClass:[NSData class]]) {
+//        file = [NSData dataWithContentsOfFile:filename];
+//
+//        if ([file length] == 0) {
+//            return NO;
+//        }
+//    }
+//
+//    return YES;
+//}
 
 // 是否是自定义model
-+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)file isModel:(BOOL)isModel {
-    NSString *Path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *CachePath = [filePath stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
-    NSString *filename = [Path stringByAppendingPathComponent:CachePath];
-    
-    if ([file isKindOfClass:[NSMutableDictionary class]]) {
-        if (isModel) {
-            NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
-            [file setDictionary:dict];
-        } else {
-            [file setDictionary:[NSMutableDictionary dictionaryWithContentsOfFile:filename]];
-        }
-        if ([file count] == 0) {
-            return NO;
-        }
-    } else if ([file isKindOfClass:[NSMutableArray class]]) {
-        if (isModel) {
-            NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
-            [file addObjectsFromArray:array];
-        } else {
-            [file addObjectsFromArray:[NSMutableArray arrayWithContentsOfFile:filename]];
-        }
-        if ([file count] == 0) {
-            return NO;
-        }
-    } else if ([file isKindOfClass:[NSData class]]) {
-        if (isModel) {
-            file = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
-        } else {
-            file = [NSData dataWithContentsOfFile:filename];
-        }
-        if ([file length] == 0) {
-            return NO;
-        }
-    }
-    
-    return YES;
-}
+//+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)file isModel:(BOOL)isModel {
+//    NSString *Path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    NSString *CachePath = [filePath stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+//    NSString *filename = [Path stringByAppendingPathComponent:CachePath];
+//
+//    if ([file isKindOfClass:[NSMutableDictionary class]]) {
+//        if (isModel) {
+//            NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
+//            [file setDictionary:dict];
+//        } else {
+//            [file setDictionary:[NSMutableDictionary dictionaryWithContentsOfFile:filename]];
+//        }
+//        if ([file count] == 0) {
+//            return NO;
+//        }
+//    } else if ([file isKindOfClass:[NSMutableArray class]]) {
+//        if (isModel) {
+//            NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
+//            [file addObjectsFromArray:array];
+//        } else {
+//            [file addObjectsFromArray:[NSMutableArray arrayWithContentsOfFile:filename]];
+//        }
+//        if ([file count] == 0) {
+//            return NO;
+//        }
+//    } else if ([file isKindOfClass:[NSData class]]) {
+//        if (isModel) {
+//            file = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
+//        } else {
+//            file = [NSData dataWithContentsOfFile:filename];
+//        }
+//        if ([file length] == 0) {
+//            return NO;
+//        }
+//    }
+//
+//    return YES;
+//}
 
 + (NSData *)getDataFileFromLoc:(NSString *)filePath into:(id)file {
     NSString *Path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -792,8 +793,12 @@
         picManager.bigImageUrlArray = [NSArray arrayWithArray:bigImageUrlArray];
     }
     [browser setDelegate:picManager];
+    __weak typeof(browser) wBrowser = browser;
     [browser setLongPressBlock:^(NSInteger index) {
-//        DDLogDebug(@"长按图片的下标是：%zd", index);
+        // 收藏、保存到本地
+        if (![NSString isEmptyString:bigImageUrl]) {
+            [Tool showAlertCWithUrlStr:bigImageUrl currentImage:wBrowser.currentLongPressImage];
+        }
     }];
     [browser showFromView:smallImageV picturesCount:pictureCount currentPictureIndex:index];
 }

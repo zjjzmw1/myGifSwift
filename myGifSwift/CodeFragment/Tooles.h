@@ -39,12 +39,12 @@ typedef enum {
 
 ///下面两个方法可以存储自定义的对象---TMCache就不行。
 + (BOOL)saveFileToLoc:(NSString *)fileName theFile:(id)file;
-+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)dic;
+//+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)dic;
 + (BOOL)removeLoc:(NSString *)fileName;//删除。
 // 是否是自定义的model
 + (BOOL)saveFileToLoc:(NSString *)fileName theFile:(id)file isModel:(BOOL)isModel;
 // 是否是自定义model
-+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)file isModel:(BOOL)isModel;
+//+ (BOOL)getFileFromLoc:(NSString *)filePath into:(id)file isModel:(BOOL)isModel;
 
 //自定义对象的时候用的。
 + (NSData *)getDataFileFromLoc:(NSString *)filePath into:(id)file;

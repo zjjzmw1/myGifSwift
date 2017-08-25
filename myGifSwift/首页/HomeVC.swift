@@ -22,6 +22,12 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
         self.fd_prefersNavigationBarHidden = true; // 隐藏导航栏
         self.initTableViewAndData()
         self.requestAction()
+        
+        // 接收通知：
+        _ = NotificationCenter.default.rx.notification(Notification.Name("kBigImageDismissNofi")).takeUntil(self.rx.deallocated).subscribe(onNext: { (value) in
+            SLog("aaaaaaaaaaaaaaa")
+            self.tabBarController?.tabBar.isHidden = false
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,6 +109,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
             if urlCount > indexPath.row {
                 currentIndex = indexPath.row
             }
+            self.tabBarController?.tabBar.isHidden = true
             // 大图浏览器
             Tooles.showBigImage(cell.backgroundImageView, bigImageUrl: urlStr, bigImageUrlArray: urlArr as! [Any], pictureCount: Int32(urlCount), currentIndex: Int32(currentIndex))
         }

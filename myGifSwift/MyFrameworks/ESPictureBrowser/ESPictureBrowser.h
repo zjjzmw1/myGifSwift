@@ -76,6 +76,8 @@
 
 @interface ESPictureBrowser : UIView
 
+@property (nonatomic, strong) UIImage       *currentLongPressImage;      // 当前长按的image
+
 @property (nonatomic, weak) id<ESPictureBrowserDelegate> delegate;
 
 /**

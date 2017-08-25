@@ -137,6 +137,10 @@
 }
 
 - (void)dismiss {
+    // 发送通知：
+    //    NotificationCenter.default.post(name: Notification.Name(rawValue: "kBigImageDismissNofi"), object: "")
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kBigImageDismissNofi" object:@""];
+    
     UIView *endView = [_delegate pictureView:self viewForIndex:_currentPage];
     CGRect rect = [endView convertRect:endView.bounds toView:nil];
     // 取到当前显示的 pictureView
@@ -164,10 +168,6 @@
 #pragma mark - 监听事件
 
 - (void)tapGes:(UITapGestureRecognizer *)ges {
-    
-    // 发送通知：
-//    NotificationCenter.default.post(name: Notification.Name(rawValue: "kBigImageDismissNofi"), object: "")
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kBigImageDismissNofi" object:@""];
     [self dismiss];
 }
 

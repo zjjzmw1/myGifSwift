@@ -595,22 +595,64 @@ public class Tool: NSObject,UIActionSheetDelegate {
     /// 弹出收藏、保存本地的控件
     public class func showAlertC(urlStr: String, currentImage: UIImage) {
         let alertC = UIAlertController.initAlertC(title: nil, msg: nil, style: .actionSheet)
-        alertC.addMyAction(title: "收藏", style: .default) { (alertA) in
-            
+        
+        var collectionStr = "收藏"
+        let arr = Tool.getUrlArrFromUserDefault()
+        if arr.contains(urlStr) {
+            collectionStr = "取消收藏"
+        }
+        alertC.addMyAction(title: collectionStr, style: .default) { (alertA) in
+            if collectionStr == "收藏" {
+                Tool.saveUrlStrToUserDefault(url: urlStr)
+                ProgressHUD.showTitle("收藏成功")
+            } else {
+                Tool.removeUrlStrFromUserDefault(url: urlStr)
+                ProgressHUD.showTitle("取消成功")
+            }
+            ProgressHUD.defaultManager().hud.isUserInteractionEnabled = false
         }
         alertC.addMyAction(title: "保存到本地", style: .default) { (alertA) in
             // ios 保存动态图片
             let library = ALAssetsLibrary.init()
             library.writeImageData(toSavedPhotosAlbum: currentImage.imageDataRepresentation(), metadata: nil, completionBlock: { (url, error) in
                 if error == nil {
-                    ProgressHUD.showSuccess("保存成功")
+                    ProgressHUD.showTitle("保存成功")
                 } else {
-                    ProgressHUD.showError("保存失败")
+                    ProgressHUD.showTitle("保存失败")
                 }
+                ProgressHUD.defaultManager().hud.isUserInteractionEnabled = false
             })
         }
         alertC.addMyAction(title: "取消", style: .cancel)
         let vc = UIApplication.shared.keyWindow?.rootViewController
         alertC.showAlertC(vc: vc, completion: nil)
     }
+    
+    /// 保存url到本地userDefault里面
+    public class func saveUrlStrToUserDefault(url: String) {
+        let arr = UserDefaults.standard.value(forKey: "kImageUrlArray") as? NSArray ?? NSArray()
+        let lastArr = NSMutableArray.init(array: arr)
+        if !lastArr.contains(url) {
+            lastArr.add(url)
+        }
+        UserDefaults.standard.set(lastArr, forKey: "kImageUrlArray")
+        UserDefaults.standard.synchronize()
+    }
+    
+    public class func removeUrlStrFromUserDefault(url: String) {
+        let arr = UserDefaults.standard.value(forKey: "kImageUrlArray") as? NSArray ?? NSArray()
+        let lastArr = NSMutableArray.init(array: arr)
+        if lastArr.contains(url) {
+            lastArr.remove(url)
+        }
+        UserDefaults.standard.set(lastArr, forKey: "kImageUrlArray")
+        UserDefaults.standard.synchronize()
+    }
+    
+    public class func getUrlArrFromUserDefault() -> NSMutableArray {
+        let arr = UserDefaults.standard.value(forKey: "kImageUrlArray") as? NSArray ?? NSArray()
+        let lastArr = NSMutableArray.init(array: arr)
+        return lastArr
+    }
+    
 }

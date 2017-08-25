@@ -796,8 +796,8 @@
     __weak typeof(browser) wBrowser = browser;
     [browser setLongPressBlock:^(NSInteger index) {
         // 收藏、保存到本地
-        if (![NSString isEmptyString:bigImageUrl]) {
-            [Tool showAlertCWithUrlStr:bigImageUrl currentImage:wBrowser.currentLongPressImage];
+        if (![NSString isEmptyString:bigImageUrlArray[index]]) {
+            [Tool showAlertCWithUrlStr:bigImageUrlArray[index] currentImage:wBrowser.currentLongPressImage];
         }
     }];
     [browser showFromView:smallImageV picturesCount:pictureCount currentPictureIndex:index];

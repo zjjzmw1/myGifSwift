@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import XLPhotoBrowser
 
 class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPhotoLibraryChangeObserver {
     
@@ -113,6 +114,13 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         
         
 //        }
+        
+        // 传入图片数据源数组self.images 可以是UIImage对象数组 ,可以是ALAsset对象, 也可以是图片的NSURL链接 , 或者是可以变成NSURL链接的NSString对象数组
+        
+//        [XLPhotoBrowser showPhotoBrowserWithImages:self.images currentImageIndex:0];
+        
+    
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

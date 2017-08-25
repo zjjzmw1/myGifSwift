@@ -1,6 +1,0 @@
-framework module XLPhotoBrowser {
-  umbrella header "XLPhotoBrowser-umbrella.h"
-
-  export *
-  module * { export * }
-}

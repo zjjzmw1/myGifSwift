@@ -129,6 +129,8 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     func requestAction() {
         let bquery = BmobQuery.init(className: "MyGif")
+        bquery?.limit = 8
+        bquery?.order(byDescending: "updatedAt")
         bquery?.findObjectsInBackground({ [weak self] (resultArr, error) in
 //            self?.tableView.dg_stopLoading()
             self?.refreshControl.endRefreshing()
@@ -145,6 +147,9 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     func requestMoreAction() {
         let bquery = BmobQuery.init(className: "MyGif")
+        bquery?.limit = 20
+        bquery?.skip = self.dataArr.count
+        bquery?.order(byDescending: "updatedAt")
         bquery?.findObjectsInBackground({ [weak self] (resultArr, error) in
 //            self?.tableView.dg_stopLoading()
             self?.refreshControl.endLoadingmore()

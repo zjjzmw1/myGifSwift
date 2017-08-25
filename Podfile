@@ -40,4 +40,7 @@ pod 'BmobSDK', '~> 2.2.1'
 
 pod 'DGElasticPullToRefresh', '~> 1.1'
 
+# 图片浏览器
+pod 'XLPhotoBrowser', '~> 1.0.2'
+
 end

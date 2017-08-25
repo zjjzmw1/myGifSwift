@@ -649,6 +649,7 @@ public class Tool: NSObject,UIActionSheetDelegate {
         UserDefaults.standard.synchronize()
     }
     
+    // ------ 即使在Bmob网站把图片删了，收藏的图片还是可以查看的。url和数据已经缓存了。
     public class func getUrlArrFromUserDefault() -> NSMutableArray {
         let arr = UserDefaults.standard.value(forKey: "kImageUrlArray") as? NSArray ?? NSArray()
         let lastArr = NSMutableArray.init(array: arr)

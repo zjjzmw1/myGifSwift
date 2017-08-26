@@ -13,6 +13,8 @@
 #import "FSActionSheet.h"
 #import "XLPhotoBrowserConfig.h"
 
+#import <Photos/Photos.h>
+
 #define BaseTag 100
 
 @interface XLPhotoBrowser () <XLZoomingScrollViewDelegate , UIScrollViewDelegate>
@@ -638,6 +640,14 @@
         CGImageRef imageRef = asset.defaultRepresentation.fullScreenImage;
         [zoomingScrollView setShowImage:[UIImage imageWithCGImage:imageRef]];
         CGImageRelease(imageRef);
+    } else if ([self assetPHForIndex:index]) { // 自己添加的PH
+        PHAsset *assetPh = [self assetPHForIndex:index];
+//        PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: nil) { (image, dict) in
+//            [zoomingScrollView setShowImage:image];
+//        }
+        [[PHCachingImageManager defaultManager] requestImageForAsset:assetPh targetSize:CGSizeZero contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            [zoomingScrollView setShowImage:result];
+        }];
     } else {
         [zoomingScrollView setShowImage:[self placeholderImageForIndex:index]];
     }
@@ -719,6 +729,24 @@
         return [self.datasource photoBrowser:self assetForIndex:index];
     } else if (self.images.count > index) {
         if ([self.images[index] isKindOfClass:[ALAsset class]]) {
+            return self.images[index];
+        } else {
+            return nil;
+        }
+    }
+    return nil;
+}
+
+/**
+ *  获取指定位置的 PHAsset,获取图片
+ */
+- (PHAsset *)assetPHForIndex:(NSInteger)index
+{
+//    if (self.datasource && [self.datasource respondsToSelector:@selector(photoBrowser:assetPHForIndex:)]) {
+//        return [self.datasource photoBrowser:self assetPHForIndex:index];
+//    } else
+    if (self.images.count > index) {
+        if ([self.images[index] isKindOfClass:[PHAsset class]]) {
             return self.images[index];
         } else {
             return nil;
@@ -1039,7 +1067,7 @@
     
     //检查数据源对象是否非法
     for (id image in images) {
-        if (![image isKindOfClass:[UIImage class]] && ![image isKindOfClass:[NSString class]] && ![image isKindOfClass:[NSURL class]] && ![image isKindOfClass:[ALAsset class]]) {
+        if (![image isKindOfClass:[UIImage class]] && ![image isKindOfClass:[NSString class]] && ![image isKindOfClass:[NSURL class]] && ![image isKindOfClass:[ALAsset class]] && ![image isKindOfClass:[PHAsset class]]) {
             XLPBLog(@"识别到非法数据格式,请检查传入数据是否为 NSString/NSURL/ALAsset 中一种");
             return nil;
         }

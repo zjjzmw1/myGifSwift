@@ -8,7 +8,10 @@
 
 import UIKit
 import Photos
-import XLPhotoBrowser
+
+import XLPhotoBrowser_CoderXL
+
+import AssetsLibrary
 
 class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPhotoLibraryChangeObserver {
     
@@ -35,7 +38,7 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
     
     /// 获取本地相册所有照片方法
     func getLocalImagesAction() {
-        // 注册通知
+        // PH方式
         PHPhotoLibrary.shared().register(self as PHPhotoLibraryChangeObserver)
         let allOptions = PHFetchOptions()
         let allResults = PHAsset.fetchAssets(with: allOptions)
@@ -117,8 +120,9 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         
         // 传入图片数据源数组self.images 可以是UIImage对象数组 ,可以是ALAsset对象, 也可以是图片的NSURL链接 , 或者是可以变成NSURL链接的NSString对象数组
         
+//        let phAsset = self.dataArr[indexPath.row] as! PHAsset
 //        [XLPhotoBrowser showPhotoBrowserWithImages:self.images currentImageIndex:0];
-        
+        XLPhotoBrowser.show(withImages: self.dataArr as! [Any]!, currentImageIndex: indexPath.row)
     
         
     }

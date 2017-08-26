@@ -91,40 +91,23 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: nil) { (image, dict) in
             cell.reloadBackgroundImage(image, description: "")
         }
-    
+        
+        let option = PHImageRequestOptions.init()
+        option.isSynchronous = true
+        option.version = .original
+        PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (imageData, dataUTI, orientation, dictInfo) in
+            if let imagD = imageData {
+                cell.reloadBackgroundImage(UIImage.init(data: imagD), description: "")
+            }
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let cell = tableView.cellForRow(at: indexPath) as! PSVisualCell
-//        let urlStr = self.dataArr.object(at: indexPath.row) as! String
-//        self.tabBarController?.tabBar.isHidden = true
-//
-//        if !String.isEmptyString(str: urlStr) {
-//            var currentIndex = 0
-//            var urlCount = 1
-//            if dataArr.count > 1 {
-//                urlCount = dataArr.count
-//            }
-//            if urlCount > indexPath.row {
-//                currentIndex = indexPath.row
-//            }
-            // 大图浏览器
-//            Tooles.showBigImage(cell.backgroundImageView, bigImageUrl: urlStr, bigImageUrlArray: self.dataArr as! [Any], pictureCount: Int32(urlCount), currentIndex: Int32(currentIndex))
-        
-//        Tooles.showBigImage(cell.backgroundImageView, bigImageUrl: <#T##String!#>, bigImageUrlArray: <#T##[Any]!#>, pictureCount: <#T##Int32#>, currentIndex: <#T##Int32#>)
-        
-        
-//        }
-        
-        // 传入图片数据源数组self.images 可以是UIImage对象数组 ,可以是ALAsset对象, 也可以是图片的NSURL链接 , 或者是可以变成NSURL链接的NSString对象数组
-        
-//        let phAsset = self.dataArr[indexPath.row] as! PHAsset
-//        [XLPhotoBrowser showPhotoBrowserWithImages:self.images currentImageIndex:0];
-        XLPhotoBrowser.show(withImages: self.dataArr as! [Any]!, currentImageIndex: indexPath.row)
-    
-        
+        let photoB =  XLPhotoBrowser.show(withImages: self.dataArr as! [Any]!, currentImageIndex: indexPath.row)
+        photoB?.browserStyle = .indexLabel
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

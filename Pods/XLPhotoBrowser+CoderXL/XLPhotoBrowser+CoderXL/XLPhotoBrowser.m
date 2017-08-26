@@ -645,9 +645,18 @@
 //        PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: nil) { (image, dict) in
 //            [zoomingScrollView setShowImage:image];
 //        }
-        [[PHCachingImageManager defaultManager] requestImageForAsset:assetPh targetSize:CGSizeZero contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-            [zoomingScrollView setShowImage:result];
+        
+        PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
+        imageRequestOptions.synchronous = YES;
+        imageRequestOptions.version = PHImageRequestOptionsVersionOriginal;
+        
+        [[PHCachingImageManager defaultManager] requestImageDataForAsset:assetPh options:imageRequestOptions resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+            [zoomingScrollView setShowImage:[UIImage imageWithData:imageData]];
         }];
+        
+//        [[PHCachingImageManager defaultManager] requestImageForAsset:assetPh targetSize:CGSizeZero contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//            [zoomingScrollView setShowImage:result];
+//        }];
     } else {
         [zoomingScrollView setShowImage:[self placeholderImageForIndex:index]];
     }

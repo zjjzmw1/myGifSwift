@@ -14,6 +14,7 @@
 #import "XLPhotoBrowserConfig.h"
 
 #import <Photos/Photos.h>
+#import "UIImage+GIF.h"
 
 #define BaseTag 100
 
@@ -642,21 +643,12 @@
         CGImageRelease(imageRef);
     } else if ([self assetPHForIndex:index]) { // 自己添加的PH
         PHAsset *assetPh = [self assetPHForIndex:index];
-//        PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: nil) { (image, dict) in
-//            [zoomingScrollView setShowImage:image];
-//        }
-        
         PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
         imageRequestOptions.synchronous = YES;
         imageRequestOptions.version = PHImageRequestOptionsVersionOriginal;
-        
         [[PHCachingImageManager defaultManager] requestImageDataForAsset:assetPh options:imageRequestOptions resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-            [zoomingScrollView setShowImage:[UIImage imageWithData:imageData]];
+            [zoomingScrollView setShowImage:[UIImage sd_animatedGIFWithData:imageData]];
         }];
-        
-//        [[PHCachingImageManager defaultManager] requestImageForAsset:assetPh targetSize:CGSizeZero contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-//            [zoomingScrollView setShowImage:result];
-//        }];
     } else {
         [zoomingScrollView setShowImage:[self placeholderImageForIndex:index]];
     }

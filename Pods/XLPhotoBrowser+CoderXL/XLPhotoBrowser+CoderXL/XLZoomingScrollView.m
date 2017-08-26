@@ -10,6 +10,7 @@
 #import "XLProgressView.h"
 
 #import "SDImageCache.h"
+#import "UIImage+GIF.h"
 
 @interface XLZoomingScrollView () <UIScrollViewDelegate>
 {
@@ -228,6 +229,10 @@
 - (void)setShowImage:(UIImage *)image
 {
     self.photoImageView.image = image;
+    if ([image isGIF]) {
+        NSLog(@"ssssss");
+    }
+    
     [self setMaxAndMinZoomScales];
     [self setNeedsLayout];
     self.progress = 1.0;

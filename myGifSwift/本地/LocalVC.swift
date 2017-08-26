@@ -16,11 +16,15 @@ import AssetsLibrary
 class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPhotoLibraryChangeObserver {
     
     func photoLibraryDidChange(_ changeInstance: PHChange) {
-        self.getLocalImagesAction()
+        self.needReloadFlag = true
+        DispatchQueue.main.async {
+            self.getLocalImagesAction()
+        }
     }
     
     var tableView: UITableView!
     var dataArr: NSMutableArray!
+    var needReloadFlag: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,27 +34,42 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         // 获取收藏的数组的url
         self.getLocalImagesAction()
-        
-        
     }
+    
     
     /// 获取本地相册所有照片方法
     func getLocalImagesAction() {
+        if !needReloadFlag {
+            self.tableView.reloadData()
+            return
+        }
+        self.needReloadFlag = false
+        ProgressHUD.show(with: self.view, title: "")
         // PH方式
         PHPhotoLibrary.shared().register(self as PHPhotoLibraryChangeObserver)
         let allOptions = PHFetchOptions()
-        let allResults = PHAsset.fetchAssets(with: allOptions)
+        let allResults = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: allOptions)
         if allResults.count > 0 {
             let tempArr = NSMutableArray()
             self.dataArr = NSMutableArray()
             for i in 0 ..< allResults.count {
-                tempArr.add(allResults[i])
+                let ph = allResults[i]
+                let reources = PHAssetResource.assetResources(for: ph)
+                let fileName = reources[0].originalFilename
+                if fileName.hasSuffix("GIF") {
+                    tempArr.add(allResults[i])
+                }
             }
             self.dataArr = NSMutableArray.init(array: tempArr)
         }
         self.tableView.reloadData()
+        ProgressHUD.dismissDelay(0)
     }
     
     func initTableViewAndData() {
@@ -88,17 +107,20 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         
         let phAsset = self.dataArr[indexPath.row] as! PHAsset
         
-        PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: nil) { (image, dict) in
-            cell.reloadBackgroundImage(image, description: "")
-        }
-        
         let option = PHImageRequestOptions.init()
         option.isSynchronous = true
         option.version = .original
-        PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (imageData, dataUTI, orientation, dictInfo) in
-            if let imagD = imageData {
-                cell.reloadBackgroundImage(UIImage.init(data: imagD), description: "")
-            }
+//        PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (imageData, dataUTI, orientation, dictInfo) in
+//            if let imagD = imageData {
+////                cell.reloadBackgroundImage(UIImage.animatedGIFWithData(data: imagD as NSData), description: "")
+//                // 列表不希望动
+//                cell.reloadBackgroundImage(UIImage.init(data: imagD), description: "")
+//            }
+//        }
+        
+        // 列表不希望动，加载image，提高流畅度
+        PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: option) { (image, dictInfo) in
+            cell.reloadBackgroundImage(image!, description: "")
         }
         
         return cell

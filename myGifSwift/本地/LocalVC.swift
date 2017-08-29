@@ -28,6 +28,7 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PHPhotoLibrary.shared().register(self as PHPhotoLibraryChangeObserver)
         self.fd_prefersNavigationBarHidden = true; // 隐藏导航栏
         self.initTableViewAndData()
     }
@@ -50,26 +51,31 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
             return
         }
         self.needReloadFlag = false
-        ProgressHUD.show(with: self.view, title: "")
-        // PH方式
-        PHPhotoLibrary.shared().register(self as PHPhotoLibraryChangeObserver)
-        let allOptions = PHFetchOptions()
-        let allResults = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: allOptions)
-        if allResults.count > 0 {
-            let tempArr = NSMutableArray()
-            self.dataArr = NSMutableArray()
-            for i in 0 ..< allResults.count {
-                let ph = allResults[i]
-                let reources = PHAssetResource.assetResources(for: ph)
-                let fileName = reources[0].originalFilename
-                if fileName.hasSuffix("GIF") {
-                    tempArr.add(allResults[i])
+        ProgressHUD.show(with: nil, title: "")
+        
+        DispatchQueue.global().async {
+            // PH方式
+            let allOptions = PHFetchOptions()
+            let allResults = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: allOptions)
+            if allResults.count > 0 {
+                let tempArr = NSMutableArray()
+                self.dataArr = NSMutableArray()
+                for i in 0 ..< allResults.count {
+                    let ph = allResults[i]
+                    let reources = PHAssetResource.assetResources(for: ph)
+                    let fileName = reources[0].originalFilename
+                    if fileName.hasSuffix("GIF") {
+                        tempArr.add(allResults[i])
+                    }
                 }
+                self.dataArr = NSMutableArray.init(array: tempArr)
             }
-            self.dataArr = NSMutableArray.init(array: tempArr)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                ProgressHUD.dismissDelay(0)
+            }
         }
-        self.tableView.reloadData()
-        ProgressHUD.dismissDelay(0)
     }
     
     func initTableViewAndData() {

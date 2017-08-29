@@ -29,7 +29,8 @@
     [ProgressHUD defaultManager].hud.bezelView.backgroundColor = [UIColor blackColor];
     [ProgressHUD defaultManager].hud.bezelView.style = MBProgressHUDBackgroundStyleBlur;
     [ProgressHUD defaultManager].hud.label.textColor = [UIColor whiteColor];
-    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor whiteColor];
+//    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor whiteColor];
+    [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:[NSArray arrayWithObject:[MBProgressHUD class]]].color = [UIColor whiteColor];
 }
 
 /**

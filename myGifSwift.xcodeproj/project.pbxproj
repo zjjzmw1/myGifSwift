@@ -13,6 +13,7 @@
 		BD94916D1F4D2E1D004F6566 /* JHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */; };
 		BD9491731F4D636B004F6566 /* PSVisualCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9491721F4D636B004F6566 /* PSVisualCell.m */; };
 		BD9C01EB1F5560E60028A19A /* UIImage+YCHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9C01EA1F5560E60028A19A /* UIImage+YCHUD.m */; };
+		BD9C01ED1F5569980028A19A /* MeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C01EC1F5569980028A19A /* MeCell.swift */; };
 		BD9D2AF01F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D2AEF1F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift */; };
 		BDA23D7B1F4C059200B89066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D7A1F4C059200B89066 /* AppDelegate.swift */; };
 		BDA23D821F4C059200B89066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D811F4C059200B89066 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		BD9491721F4D636B004F6566 /* PSVisualCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSVisualCell.m; sourceTree = "<group>"; };
 		BD9C01E91F5560E60028A19A /* UIImage+YCHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YCHUD.h"; sourceTree = "<group>"; };
 		BD9C01EA1F5560E60028A19A /* UIImage+YCHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YCHUD.m"; sourceTree = "<group>"; };
+		BD9C01EC1F5569980028A19A /* MeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCell.swift; sourceTree = "<group>"; };
 		BD9D2AEF1F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+IOSUtil.swift"; sourceTree = "<group>"; };
 		BDA23D771F4C059200B89066 /* myGifSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGifSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA23D7A1F4C059200B89066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				BDE15BEB1F4C308C0070D1C7 /* MeVC.swift */,
+				BD9C01EC1F5569980028A19A /* MeCell.swift */,
 			);
 			path = "我的";
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				BDE15C381F4C33EA0070D1C7 /* SizeMacros.swift in Sources */,
 				BDE15C3A1F4C33EA0070D1C7 /* UtilMacros.swift in Sources */,
 				BDE15C221F4C33720070D1C7 /* UIImageView+JCImageView.swift in Sources */,
+				BD9C01ED1F5569980028A19A /* MeCell.swift in Sources */,
 				BDE15BEE1F4C30C40070D1C7 /* BaseViewController.swift in Sources */,
 				BDE15C261F4C33720070D1C7 /* UIScrollView+JCScrollView.swift in Sources */,
 				BD9D2AF01F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift in Sources */,

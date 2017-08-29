@@ -647,7 +647,8 @@
         imageRequestOptions.synchronous = YES;
         imageRequestOptions.version = PHImageRequestOptionsVersionOriginal;
         [[PHCachingImageManager defaultManager] requestImageDataForAsset:assetPh options:imageRequestOptions resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-            [zoomingScrollView setShowImage:[UIImage sd_animatedGIFWithData:imageData]];
+//            [zoomingScrollView setShowImage:[UIImage sd_animatedGIFWithData:imageData]]; // 这个只是动图的第一帧，坑人。。。
+            [zoomingScrollView setShowImage:[UIImage testYCHUDImageWithSmallGIFData:imageData scale:1]];
         }];
     } else {
         [zoomingScrollView setShowImage:[self placeholderImageForIndex:index]];

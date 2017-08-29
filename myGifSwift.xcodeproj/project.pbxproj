@@ -12,6 +12,7 @@
 		BD94916B1F4D2D95004F6566 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916A1F4D2D95004F6566 /* HomeVC.swift */; };
 		BD94916D1F4D2E1D004F6566 /* JHNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */; };
 		BD9491731F4D636B004F6566 /* PSVisualCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9491721F4D636B004F6566 /* PSVisualCell.m */; };
+		BD9C01EB1F5560E60028A19A /* UIImage+YCHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9C01EA1F5560E60028A19A /* UIImage+YCHUD.m */; };
 		BD9D2AF01F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D2AEF1F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift */; };
 		BDA23D7B1F4C059200B89066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D7A1F4C059200B89066 /* AppDelegate.swift */; };
 		BDA23D821F4C059200B89066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D811F4C059200B89066 /* Assets.xcassets */; };
@@ -80,6 +81,8 @@
 		BD94916C1F4D2E1D004F6566 /* JHNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHNetwork.swift; sourceTree = "<group>"; };
 		BD9491711F4D636B004F6566 /* PSVisualCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSVisualCell.h; sourceTree = "<group>"; };
 		BD9491721F4D636B004F6566 /* PSVisualCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSVisualCell.m; sourceTree = "<group>"; };
+		BD9C01E91F5560E60028A19A /* UIImage+YCHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YCHUD.h"; sourceTree = "<group>"; };
+		BD9C01EA1F5560E60028A19A /* UIImage+YCHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YCHUD.m"; sourceTree = "<group>"; };
 		BD9D2AEF1F4ECDA2001AA913 /* UIAlertController+IOSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+IOSUtil.swift"; sourceTree = "<group>"; };
 		BDA23D771F4C059200B89066 /* myGifSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myGifSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA23D7A1F4C059200B89066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +213,15 @@
 			path = "视觉差效果cell";
 			sourceTree = "<group>";
 		};
+		BD9C01E81F5560CE0028A19A /* DataToGif */ = {
+			isa = PBXGroup;
+			children = (
+				BD9C01E91F5560E60028A19A /* UIImage+YCHUD.h */,
+				BD9C01EA1F5560E60028A19A /* UIImage+YCHUD.m */,
+			);
+			path = DataToGif;
+			sourceTree = "<group>";
+		};
 		BDA23D6E1F4C059200B89066 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +299,7 @@
 		BDA23D951F4C071F00B89066 /* MyFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD9C01E81F5560CE0028A19A /* DataToGif */,
 				BD8815AC1F4EA25C00A6CA9A /* ZJRefreshControl */,
 				BDEA1A001F4E75150078451D /* FDFullscreenPopGesture */,
 				BD9491701F4D6344004F6566 /* 视觉差效果cell */,
@@ -645,6 +658,7 @@
 				BDE15C5A1F4C34B30070D1C7 /* Tooles.m in Sources */,
 				BDE15C1F1F4C33720070D1C7 /* UIColor+IOSUtils.m in Sources */,
 				BDEA19FF1F4E628E0078451D /* MyGifModel.swift in Sources */,
+				BD9C01EB1F5560E60028A19A /* UIImage+YCHUD.m in Sources */,
 				BDE15BEA1F4C307C0070D1C7 /* LocalVC.swift in Sources */,
 				BDE15C201F4C33720070D1C7 /* UIColor+JCColor.swift in Sources */,
 				BDE15C291F4C33720070D1C7 /* UIView+IOSUtil.swift in Sources */,

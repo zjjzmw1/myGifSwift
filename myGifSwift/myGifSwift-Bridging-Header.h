@@ -13,3 +13,4 @@
 
 #import <BmobSDK/Bmob.h>
 
+#import "UIImage+YCHUD.h"

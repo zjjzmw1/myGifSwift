@@ -21,4 +21,7 @@
  */
 - (BOOL)isGIF;
 
+
++ (UIImage *)testYCHUDImageWithSmallGIFData:(NSData *)data scale:(CGFloat)scale;
+
 @end

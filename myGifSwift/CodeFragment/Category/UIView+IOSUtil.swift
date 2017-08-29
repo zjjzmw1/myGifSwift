@@ -151,41 +151,41 @@ extension UIView {
     }
     
     // frame.origin.x
-    var x: CGFloat {
-        set {
-            var rect = self.frame;
-            rect.origin.x = x;
-            self.frame = rect;
-        }
-        
-        get {
-            return self.frame.origin.x;
-        }
-    }
-    
-    // frame.origin.y
-    var y: CGFloat {
-        set {
-            var rect = self.frame;
-            rect.origin.y = y;
-            self.frame = rect;
-        }
-        
-        get {
-            return self.frame.origin.y;
-        }
-    }
+//    var x: CGFloat {
+//        set {
+//            var rect = self.frame;
+//            rect.origin.x = x;
+//            self.frame = rect;
+//        }
+//
+//        get {
+//            return self.frame.origin.x;
+//        }
+//    }
+//
+//    // frame.origin.y
+//    var y: CGFloat {
+//        set {
+//            var rect = self.frame;
+//            rect.origin.y = y;
+//            self.frame = rect;
+//        }
+//
+//        get {
+//            return self.frame.origin.y;
+//        }
+//    }
     
     // 左间距
-    var leftSpacing: CGFloat {
-        set {
-            self.x = leftSpacing;
-        }
-        
-        get {
-            return self.x;
-        }
-    }
+//    var leftSpacing: CGFloat {
+//        set {
+//            self.x = leftSpacing;
+//        }
+//        
+//        get {
+//            return self.x;
+//        }
+//    }
     
 //    // 右间距
 //    var rightSpacing: CGFloat {
@@ -199,15 +199,15 @@ extension UIView {
 //    }
     
     // 上间距
-    var topSpacing: CGFloat {
-        set {
-            self.y = topSpacing;
-        }
-        
-        get {
-            return self.y;
-        }
-    }
+//    var topSpacing: CGFloat {
+//        set {
+//            self.y = topSpacing;
+//        }
+//
+//        get {
+//            return self.y;
+//        }
+//    }
     
 //    // 下间距
 //    var bottomSpacing: CGFloat {

@@ -6,7 +6,7 @@
 #import "Tooles.h"
 #import "ProgressHUD.h"
 #import "UIView+Utils.h"
-#import "UIView+Utils.h"
+
 #import "PSVisualCell.h"
 #import <YYKit/YYKit.h>
 #import "UINavigationController+FDFullscreenPopGesture.h"

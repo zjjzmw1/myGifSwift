@@ -34,10 +34,10 @@ extension UINavigationItem {
         titleLbl.backgroundColor = UIColor.clear
         titleV.addSubview(loader)
         titleV.addSubview(titleLbl)
-        titleLbl.centerX = titleLbl.superview!.centerX + 15
-        titleLbl.centerY = titleV.centerY
-        loader.centerX = titleLbl.superview!.centerX - titleW/2.0
-        loader.centerY = titleV.centerY
+        titleLbl.xl_centerX = titleLbl.superview!.xl_centerX + 15
+        titleLbl.xl_centerY = titleV.xl_centerY
+        loader.xl_centerX = titleLbl.superview!.xl_centerX - titleW/2.0
+        loader.xl_centerY = titleV.xl_centerY
         loader.startAnimating();
     }
     

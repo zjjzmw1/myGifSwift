@@ -54,13 +54,14 @@ class RHRefreshHeader: NSObject {
         headerImage.image = UIImage(named: "arrow")
         headerImage.isHidden = false
         headerView.addSubview(headerImage)
-        headerImage.centerX = headerView.centerX;
+//        headerImage.centerX = headerView.centerX;
+        headerImage.xl_centerX = headerView.xl_centerX;
         
         loadingView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         loadingView.frame = CGRect(x: (Int(scrollWidth) - labelWidth) / 2 - imageWidth, y: 0, width: imageWidth, height: imageHeight)
         loadingView.isHidden = true
         headerView.addSubview(loadingView)
-        loadingView.centerX = headerView.centerX
+        loadingView.xl_centerX = headerView.xl_centerX
         
         scrollView.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
     }

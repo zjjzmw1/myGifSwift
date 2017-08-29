@@ -110,18 +110,13 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         let option = PHImageRequestOptions.init()
         option.isSynchronous = true
         option.version = .original
-//        PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (imageData, dataUTI, orientation, dictInfo) in
-//            if let imagD = imageData {
-////                cell.reloadBackgroundImage(UIImage.animatedGIFWithData(data: imagD as NSData), description: "")
-//                // 列表不希望动
-//                cell.reloadBackgroundImage(UIImage.init(data: imagD), description: "")
-//            }
-//        }
         
-        // 列表不希望动，加载image，提高流畅度
-        PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: option) { (image, dictInfo) in
-            cell.reloadBackgroundImage(image!, description: "")
+        PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (data, str, orientation, dictInfo) in
+            if let imageD = data {
+                cell.reloadBackgroundImage(UIImage.init(data: imageD), description: "")
+            }
         }
+        
         
         return cell
     }

@@ -18,6 +18,11 @@
 		BDA23D7B1F4C059200B89066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D7A1F4C059200B89066 /* AppDelegate.swift */; };
 		BDA23D821F4C059200B89066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA23D811F4C059200B89066 /* Assets.xcassets */; };
 		BDA23DE51F4C078700B89066 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA23D8F1F4C071F00B89066 /* EmptyView.m */; };
+		BDC7478E1F58090E004304B9 /* KSPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC7478D1F5808DD004304B9 /* KSPhotoBrowser.m */; };
+		BDC7478F1F580912004304B9 /* KSPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC747841F5808DD004304B9 /* KSPhotoItem.m */; };
+		BDC747901F580917004304B9 /* KSPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC747871F5808DD004304B9 /* KSPhotoView.m */; };
+		BDC747911F58091B004304B9 /* KSProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC7478C1F5808DD004304B9 /* KSProgressLayer.m */; };
+		BDC747921F580920004304B9 /* KSYYImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC7478B1F5808DD004304B9 /* KSYYImageManager.m */; };
 		BDE15BE81F4C30620070D1C7 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15BE71F4C30620070D1C7 /* FavoriteVC.swift */; };
 		BDE15BEA1F4C307C0070D1C7 /* LocalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15BE91F4C307C0070D1C7 /* LocalVC.swift */; };
 		BDE15BEC1F4C308C0070D1C7 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE15BEB1F4C308C0070D1C7 /* MeVC.swift */; };
@@ -100,6 +105,17 @@
 		BDA23D9D1F4C071F00B89066 /* hud_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_error@2x.png"; sourceTree = "<group>"; };
 		BDA23DD01F4C071F00B89066 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		BDA23DE11F4C075900B89066 /* myGifSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myGifSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		BDC747831F5808DD004304B9 /* KSProgressLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSProgressLayer.h; sourceTree = "<group>"; };
+		BDC747841F5808DD004304B9 /* KSPhotoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSPhotoItem.m; sourceTree = "<group>"; };
+		BDC747851F5808DD004304B9 /* KSYYImageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSYYImageManager.h; sourceTree = "<group>"; };
+		BDC747861F5808DD004304B9 /* KSPhotoBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSPhotoBrowser.h; sourceTree = "<group>"; };
+		BDC747871F5808DD004304B9 /* KSPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSPhotoView.m; sourceTree = "<group>"; };
+		BDC747881F5808DD004304B9 /* KSImageManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSImageManagerProtocol.h; sourceTree = "<group>"; };
+		BDC747891F5808DD004304B9 /* KSPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSPhotoView.h; sourceTree = "<group>"; };
+		BDC7478A1F5808DD004304B9 /* KSPhotoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSPhotoItem.h; sourceTree = "<group>"; };
+		BDC7478B1F5808DD004304B9 /* KSYYImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSYYImageManager.m; sourceTree = "<group>"; };
+		BDC7478C1F5808DD004304B9 /* KSProgressLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSProgressLayer.m; sourceTree = "<group>"; };
+		BDC7478D1F5808DD004304B9 /* KSPhotoBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSPhotoBrowser.m; sourceTree = "<group>"; };
 		BDE15BE71F4C30620070D1C7 /* FavoriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		BDE15BE91F4C307C0070D1C7 /* LocalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalVC.swift; sourceTree = "<group>"; };
 		BDE15BEB1F4C308C0070D1C7 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
@@ -301,6 +317,7 @@
 		BDA23D951F4C071F00B89066 /* MyFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDC747771F5808CE004304B9 /* KSPhotoBrowser */,
 				BD9C01E81F5560CE0028A19A /* DataToGif */,
 				BD8815AC1F4EA25C00A6CA9A /* ZJRefreshControl */,
 				BDEA1A001F4E75150078451D /* FDFullscreenPopGesture */,
@@ -466,6 +483,24 @@
 				BDE15BE91F4C307C0070D1C7 /* LocalVC.swift */,
 			);
 			path = "本地";
+			sourceTree = "<group>";
+		};
+		BDC747771F5808CE004304B9 /* KSPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				BDC747881F5808DD004304B9 /* KSImageManagerProtocol.h */,
+				BDC747861F5808DD004304B9 /* KSPhotoBrowser.h */,
+				BDC7478D1F5808DD004304B9 /* KSPhotoBrowser.m */,
+				BDC7478A1F5808DD004304B9 /* KSPhotoItem.h */,
+				BDC747841F5808DD004304B9 /* KSPhotoItem.m */,
+				BDC747891F5808DD004304B9 /* KSPhotoView.h */,
+				BDC747871F5808DD004304B9 /* KSPhotoView.m */,
+				BDC747831F5808DD004304B9 /* KSProgressLayer.h */,
+				BDC7478C1F5808DD004304B9 /* KSProgressLayer.m */,
+				BDC747851F5808DD004304B9 /* KSYYImageManager.h */,
+				BDC7478B1F5808DD004304B9 /* KSYYImageManager.m */,
+			);
+			path = KSPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		BDEA19FD1F4E624A0078451D /* 后端返回的model */ = {
@@ -654,6 +689,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC747921F580920004304B9 /* KSYYImageManager.m in Sources */,
+				BDC747911F58091B004304B9 /* KSProgressLayer.m in Sources */,
+				BDC747901F580917004304B9 /* KSPhotoView.m in Sources */,
+				BDC7478F1F580912004304B9 /* KSPhotoItem.m in Sources */,
+				BDC7478E1F58090E004304B9 /* KSPhotoBrowser.m in Sources */,
 				BDEA1A0A1F4E75500078451D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				BDEA1A091F4E754C0078451D /* FDDemoScrollView.m in Sources */,
 				BDE15C281F4C33720070D1C7 /* UITextView+JCTextView.swift in Sources */,

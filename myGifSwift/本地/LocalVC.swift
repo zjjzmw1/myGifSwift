@@ -13,7 +13,7 @@ import XLPhotoBrowser_CoderXL
 
 import AssetsLibrary
 
-class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPhotoLibraryChangeObserver {
+class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPhotoLibraryChangeObserver,KSPhotoBrowserDelegate {
     
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         self.needReloadFlag = true
@@ -112,25 +112,52 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         let cell = tableView.dequeueReusableCell(withIdentifier: "PSVisualCell", for: indexPath) as! PSVisualCell
         
         let phAsset = self.dataArr[indexPath.row] as! PHAsset
-        
         let option = PHImageRequestOptions.init()
         option.isSynchronous = true
         option.version = .original
-        
         PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (data, str, orientation, dictInfo) in
             if let imageD = data {
                 cell.reloadBackgroundImage(UIImage.init(data: imageD), description: "")
             }
         }
         
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let photoB =  XLPhotoBrowser.show(withImages: self.dataArr as! [Any]!, currentImageIndex: indexPath.row)
-        photoB?.browserStyle = .indexLabel
+//        let photoB =  XLPhotoBrowser.show(withImages: self.dataArr as! [Any]!, currentImageIndex: indexPath.row)
+//        photoB?.browserStyle = .indexLabel
+        
+        let cell = tableView.cellForRow(at: indexPath) as! PSVisualCell
+        let phAsset = self.dataArr[indexPath.row] as! PHAsset
+        let option = PHImageRequestOptions.init()
+        option.isSynchronous = true
+        option.version = .original
+        var items = NSMutableArray()
+        SLog("aaaaaaaaaaa")
+        for i in 0 ..< self.dataArr.count {
+            PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (data, str, orientation, dictInfo) in
+                if let imageD = data {
+                    let item = KSPhotoItem.init(sourceView: cell.backgroundImageView, image: UIImage.init(data: imageD)!)
+                    items.add(item)
+                    SLog("bbbbbbbbbbbb")
+                }
+            }
+        }
+        SLog("cccccccccccccccccc")
+        var browser = KSPhotoBrowser.init(photoItems: items as! [KSPhotoItem], selectedIndex: UInt(indexPath.row))
+        browser.delegate = self
+        browser.dismissalStyle = .rotation
+        browser.backgroundStyle = .blurPhoto
+        browser.loadingStyle = .determinate
+        browser.pageindicatorStyle = .dot
+        browser.bounces = true
+        browser.show(from: self)
+    }
+    
+    func ks_photoBrowser(_ browser: KSPhotoBrowser, didSelect item: KSPhotoItem, at index: UInt) {
+       SLog(index)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -142,3 +169,29 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

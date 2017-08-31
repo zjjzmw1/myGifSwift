@@ -14,3 +14,8 @@
 #import <BmobSDK/Bmob.h>
 
 #import "UIImage+YCHUD.h"
+
+#import "KSPhotoItem.h"
+#import "KSPhotoView.h"
+#import "KSPhotoBrowser.h"
+#import "KSYYImageManager.h"

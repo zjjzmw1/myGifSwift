@@ -45,4 +45,8 @@ pod 'DGElasticPullToRefresh', '~> 1.1'
 pod 'XLPhotoBrowser+CoderXL'
 
 
+pod 'YYWebImage', '~> 1.0.5'
+pod 'SDWebImage', '~> 4.0.0'
+
+
 end

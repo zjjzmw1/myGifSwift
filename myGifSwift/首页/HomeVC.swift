@@ -21,6 +21,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
         super.viewDidLoad()
         self.fd_prefersNavigationBarHidden = true; // 隐藏导航栏
         self.initTableViewAndData()
+        self.refreshAction()
         self.requestAction()
         
         // 接收通知：
@@ -156,6 +157,9 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
     }
     
     func requestAction() {
+        if self.dataArr.count == 0 {
+            ProgressHUD.show(with: self.view, title: "")
+        }
         let bquery = BmobQuery.init(className: "MyGif")
         bquery?.limit = 20
         bquery?.order(byDescending: "updatedAt")
@@ -163,11 +167,14 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
 //            self?.tableView.dg_stopLoading()
             self?.refreshControl.endRefreshing()
             if let resultArr = resultArr {
+                ProgressHUD.dismissDelay(0)
                 self?.dataArr = NSMutableArray.init()
                 for i in 0 ..< resultArr.count {
                     let mygifM = MyGifModel.deserialize(from: (resultArr[i] as! BmobObject).modelToJSONString())
                     self?.dataArr.add(mygifM ?? MyGifModel.init())
                 }
+            } else {
+                ProgressHUD.showError("加载失败")
             }
             self?.refreshAction()
         })

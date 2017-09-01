@@ -639,7 +639,7 @@ public class Tool: NSObject,UIActionSheetDelegate {
             ProgressHUD.show(with: nil, title: "上传中...")
             ProgressHUD.defaultManager().hud.mode = .annularDeterminate
             let bmobFile: BmobFile = BmobFile.init(fileName: "userUploadGif.gif", withFileData: UIImagePNGRepresentation(currentImage))
-            NSData.init
+
             bmobFile.save(inBackground: { (isSuccessed, error) in
                 if isSuccessed {
                     ProgressHUD.showSuccess("上传成功")

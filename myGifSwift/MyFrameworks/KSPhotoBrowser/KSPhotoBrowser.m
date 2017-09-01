@@ -504,7 +504,18 @@ static Class imageManagerClass = nil;
 //    }
 //    [self presentViewController:activityViewController animated:YES completion:nil];
     // 长按弹出上传按钮    
-    [Tool showUploadAlertCWithCurrentImage:image fromVC:self];
+//    [Tool showUploadAlertCWithCurrentImage:image fromVC:self];
+    
+//    func userUploadImageAction(currentImage: UIImage, fromVC: UIViewController, currentP: Int) {
+
+
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:@(_currentPage) forKey:@"page"];
+    [dict setObject:self forKey:@"vc"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kUploadUserImageNoti" object:dict];
+
+
 }
 
 - (void)didPan:(UIPanGestureRecognizer *)pan {

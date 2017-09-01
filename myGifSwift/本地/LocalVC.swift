@@ -29,6 +29,21 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         PHPhotoLibrary.shared().register(self as PHPhotoLibraryChangeObserver)
         self.fd_prefersNavigationBarHidden = true; // 隐藏导航栏
         self.initTableViewAndData()
+        
+        // 接收通知：
+        _ = NotificationCenter.default.rx.notification(Notification.Name("kUploadUserImageNoti")).takeUntil(self.rx.deallocated).subscribe(onNext: { [weak self] (value) in
+
+            SLog(value.object)
+            if let dict = value.object as? Dictionary<String, AnyObject> {
+                SLog("===\(dict["page"]),,,,\(dict["vc"])")
+                self?.userUploadImageAction(fromVC: dict["vc"] as! UIViewController, currentP: Int(dict["page"] as! NSNumber))
+
+            }
+            
+
+        })
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,6 +152,52 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         }
         
         return cell
+    }
+    
+    /// 用户上传图片的方法
+    func userUploadImageAction(fromVC: UIViewController, currentP: Int) {
+        let alertC = UIAlertController.initAlertC(title: "上传图片", msg: nil, style: .actionSheet)
+        let collectionStr = "上传"
+        alertC.addMyAction(title: collectionStr, style: .default) { (alertA) in
+            // 上传的方法
+            // 先上传文件
+            ProgressHUD.show(with: nil, title: "上传中...")
+            ProgressHUD.defaultManager().hud.mode = .annularDeterminate
+            ProgressHUD.defaultManager().hud.tintColor = UIColor.white
+            let phAsset = self.dataArr[currentP] as! PHAsset
+            let option = PHImageRequestOptions.init()
+            option.isSynchronous = true
+            option.version = .original
+            option.deliveryMode = .highQualityFormat
+            
+            PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (data, str, orientation, dictInfo) in
+                if let imageD = data {
+                
+                    let bmobFile: BmobFile = BmobFile.init(fileName: "userUploadGif.gif", withFileData: imageD)
+                    bmobFile.save(inBackground: { (isSuccessed, error) in
+                        if isSuccessed {
+                            ProgressHUD.showSuccess("上传成功")
+                            let myGif = BmobObject.init(className: "MyGif")
+                            myGif?.setObject(bmobFile, forKey: "userImage") // 对应的列表的名字。。。。
+                            myGif?.saveInBackground(resultBlock: { (isSuccess, error) in
+                                
+                            })
+                        } else {
+                            ProgressHUD.showError("上传失败")
+                        }
+                    }, withProgressBlock: { (progressFloat) in
+                        ProgressHUD.defaultManager().hud.progress = Float.init(progressFloat)
+                    })
+                } else {
+                    ProgressHUD.showError("上传失败")
+                }
+            }
+
+            ProgressHUD.defaultManager().hud.isUserInteractionEnabled = false
+        }
+        alertC.addMyAction(title: "取消", style: .cancel)
+        let vc = fromVC
+        alertC.showAlertC(vc: vc, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

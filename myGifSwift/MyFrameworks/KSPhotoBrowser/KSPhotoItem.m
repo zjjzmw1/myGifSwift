@@ -8,6 +8,8 @@
 
 #import "KSPhotoItem.h"
 
+#import "UIImage+YCHUD.h"
+
 @interface KSPhotoItem ()
 
 @property (nonatomic, strong, readwrite) UIView *sourceView;
@@ -50,6 +52,28 @@
     }
     return self;
 }
+
+/// 新添加的 PHAsset
+- (instancetype)initWithSourceView:(UIImageView *)view thumbImage: (UIImage *)thumbImg
+                             imagePHasset:(PHAsset *)phAsset {
+    self = [super init];
+    if (self) {
+        _sourceView = view;
+        _thumbImage = thumbImg;
+        _imageUrl = nil;
+        
+        PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
+        [option setSynchronous:YES];
+        [option setVersion:PHImageRequestOptionsVersionOriginal];
+        
+        [[PHCachingImageManager defaultManager] requestImageDataForAsset:phAsset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+            _image = [UIImage YCHUDImageWithSmallGIFData:imageData scale:1.0];
+        }];
+        
+    }
+    return self;
+}
+
 
 + (instancetype)itemWithSourceView:(UIView *)view
                         thumbImage:(UIImage *)image

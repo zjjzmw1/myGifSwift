@@ -9,7 +9,7 @@
 import UIKit
 import DGElasticPullToRefresh
 
-class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPhotoBrowserDelegate {
     
     var tableView: UITableView!
     var dataArr: NSMutableArray!
@@ -115,7 +115,35 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource {
             self.tabBarController?.tabBar.isHidden = true
             // 大图浏览器
             Tooles.showBigImage(cell.backgroundImageView, bigImageUrl: urlStr, bigImageUrlArray: urlArr as! [Any], pictureCount: Int32(urlCount), currentIndex: Int32(currentIndex))
+            // 炫酷的方式
+//            let items = NSMutableArray()
+//            for i in 0 ..< urlArr.count {
+//                let item = KSPhotoItem.init(sourceView: cell.backgroundImageView, imageUrl: URL.init(string: urlArr[i] as! String)!)
+//                items.add(item)
+//            }
+//            /// 弹出图片浏览器
+//            let browser = KSPhotoBrowser.init(photoItems: items as! [KSPhotoItem], selectedIndex: UInt(indexPath.row))
+//            browser.delegate = self
+//            browser.dismissalStyle = .rotation
+//            browser.backgroundStyle = .blurPhoto
+//            browser.loadingStyle = .determinate
+//            browser.pageindicatorStyle = .text
+//            browser.bounces = true
+//            browser.show(from: self)
+            
         }
+    }
+    
+    func ks_photoBrowser(_ browser: KSPhotoBrowser, didSelect item: KSPhotoItem, at index: UInt) {
+        SLog(index)
+        // 收藏、保存到本地
+//        if (![NSString isEmptyString:bigImageUrlArray[index]]) {
+//            [Tool showAlertCWithUrlStr:bigImageUrlArray[index] currentImage:wBrowser.currentLongPressImage];
+//        }
+        
+//        if !String.isEmptyString(str: item.imageUrl.absoluteString) {
+//            Tool.showAlertC(urlStr: item.imageUrl.absoluteString, currentImage: item.image)
+//        }
         
     }
     

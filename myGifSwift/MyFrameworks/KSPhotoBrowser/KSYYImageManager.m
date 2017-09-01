@@ -39,16 +39,8 @@
             completion(image, url, success, error);
         }
     };
-//    [imageView yy_setImageWithURL:imageURL placeholder:placeholder options:kNilOptions progress:progressBlock transform:nil completion:completionBlock];
     
-//    - (void)setImageWithURL:(nullable NSURL *)imageURL
-//placeholder:(nullable UIImage *)placeholder
-//options:(YYWebImageOptions)options
-//progress:(nullable YYWebImageProgressBlock)progress
-//transform:(nullable YYWebImageTransformBlock)transform
-//completion:(nullable YYWebImageCompletionBlock)completion;
-    
-    [imageView setImageWithURL:imageURL placeholder:placeholder options:nil progress:progressBlock transform:nil completion:completionBlock];
+    [imageView setImageWithURL:imageURL placeholder:placeholder options:0 progress:progressBlock transform:nil completion:completionBlock];
     
 }
 

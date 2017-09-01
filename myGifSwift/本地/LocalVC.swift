@@ -24,6 +24,7 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
     
     var tableView: UITableView!
     var dataArr: NSMutableArray!
+    var items: NSMutableArray!
     var needReloadFlag: Bool = true
     
     override func viewDidLoad() {
@@ -73,6 +74,16 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.items = NSMutableArray()
+                /// 初始化 KSPhotoItem
+                for j in 0 ..< self.dataArr.count {
+                    let indexPath = IndexPath.init(row: 0, section: 0)
+                    let cell = self.tableView.cellForRow(at: indexPath) as! PSVisualCell
+                    let tempPH = self.dataArr[j] as! PHAsset
+                    let item = KSPhotoItem.init(sourceView: cell.backgroundImageView, thumbImage: cell.backgroundImageView.image ?? #imageLiteral(resourceName: "icon_1024"), imagePHasset: tempPH)
+                    self.items.add(item)
+                }
+                self.tableView.reloadData()
                 ProgressHUD.dismissDelay(0)
             }
         }
@@ -120,38 +131,23 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
                 cell.reloadBackgroundImage(UIImage.init(data: imageD), description: "")
             }
         }
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-//        let photoB =  XLPhotoBrowser.show(withImages: self.dataArr as! [Any]!, currentImageIndex: indexPath.row)
-//        photoB?.browserStyle = .indexLabel
         
         let cell = tableView.cellForRow(at: indexPath) as! PSVisualCell
-        let phAsset = self.dataArr[indexPath.row] as! PHAsset
-        let option = PHImageRequestOptions.init()
-        option.isSynchronous = true
-        option.version = .original
-        var items = NSMutableArray()
-        SLog("aaaaaaaaaaa")
-        for i in 0 ..< self.dataArr.count {
-            PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (data, str, orientation, dictInfo) in
-                if let imageD = data {
-                    let item = KSPhotoItem.init(sourceView: cell.backgroundImageView, image: UIImage.init(data: imageD)!)
-                    items.add(item)
-                    SLog("bbbbbbbbbbbb")
-                }
-            }
-        }
-        SLog("cccccccccccccccccc")
-        var browser = KSPhotoBrowser.init(photoItems: items as! [KSPhotoItem], selectedIndex: UInt(indexPath.row))
+        let tempPH = self.dataArr[indexPath.row] as! PHAsset
+        let item = KSPhotoItem.init(sourceView: cell.backgroundImageView, thumbImage: cell.backgroundImageView.image ?? #imageLiteral(resourceName: "icon_1024"), imagePHasset: tempPH)
+        self.items.replaceObject(at: indexPath.row, with: item)
+        /// 弹出图片浏览器
+        let browser = KSPhotoBrowser.init(photoItems: self.items as! [KSPhotoItem], selectedIndex: UInt(indexPath.row))
         browser.delegate = self
         browser.dismissalStyle = .rotation
         browser.backgroundStyle = .blurPhoto
         browser.loadingStyle = .determinate
-        browser.pageindicatorStyle = .dot
+        browser.pageindicatorStyle = .text
         browser.bounces = true
         browser.show(from: self)
     }
@@ -169,29 +165,5 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

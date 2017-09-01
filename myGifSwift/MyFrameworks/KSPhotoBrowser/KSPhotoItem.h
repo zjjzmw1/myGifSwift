@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Photos/Photos.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
                           imageUrl:(NSURL *)url;
 - (instancetype)initWithSourceView:(UIImageView *)view
                              image:(UIImage *)image;
+
+/// 新添加的 PHAsset
+- (instancetype)initWithSourceView:(UIImageView *)view thumbImage: (UIImage *)thumbImg
+                      imagePHasset:(PHAsset *)phAsset;
 
 + (instancetype)itemWithSourceView:(UIView *)view
                          thumbImage:(UIImage *)image

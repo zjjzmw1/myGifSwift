@@ -17,9 +17,6 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
     
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         self.needReloadFlag = true
-        DispatchQueue.main.async {
-            self.getLocalImagesAction()
-        }
     }
     
     var tableView: UITableView!
@@ -77,8 +74,10 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
                 self.items = NSMutableArray()
                 /// 初始化 KSPhotoItem
                 for j in 0 ..< self.dataArr.count {
-                    let indexPath = IndexPath.init(row: 0, section: 0)
-                    let cell = self.tableView.cellForRow(at: indexPath) as! PSVisualCell
+                    if self.tableView.visibleCells.count == 0 {
+                        break
+                    }
+                    let cell = self.tableView.visibleCells[0] as! PSVisualCell
                     let tempPH = self.dataArr[j] as! PHAsset
                     let item = KSPhotoItem.init(sourceView: cell.backgroundImageView, thumbImage: cell.backgroundImageView.image ?? #imageLiteral(resourceName: "icon_1024"), imagePHasset: tempPH)
                     self.items.add(item)

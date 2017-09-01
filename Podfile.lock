@@ -37,6 +37,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - RxCocoa (~> 3.2.0)
   - RxSwift (~> 3.2.0)
+  - SDWebImage (~> 4.0.0)
   - SwiftDate (~> 4.0)
   - SwiftyJSON (~> 3.1.4)
   - UMengAnalytics-NO-IDFA (~> 4.2.5)
@@ -63,6 +64,6 @@ SPEC CHECKSUMS:
   XLPhotoBrowser+CoderXL: 2bf4036e2af4611b24bde1681e24c64ed01fbe98
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1215e961d379820faafef6ba1d2c472d90170f64
+PODFILE CHECKSUM: ccedda981df374708bfcf5d1f2e971925d05241b
 
 COCOAPODS: 1.3.1

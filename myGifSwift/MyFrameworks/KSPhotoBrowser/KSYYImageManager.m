@@ -7,12 +7,16 @@
 //
 
 #import "KSYYImageManager.h"
+//#import <YYWebImage/YYWebImage.h>
+#import "UIImageView+YYWebImage.h"
 
 #if __has_include(<YYWebImage/YYWebImage.h>)
 #import <YYWebImage/YYWebImage.h>
 #else
 //#import "YYWebImage.h"
 #import <YYKit/YYKit.h>
+#import "UIImage+YYAdd.h"
+
 //#import "KSYYImageManager.h"
 #endif
 
@@ -35,14 +39,22 @@
             completion(image, url, success, error);
         }
     };
-    [imageView yy_setImageWithURL:imageURL placeholder:placeholder options:kNilOptions progress:progressBlock transform:nil completion:completionBlock];
+//    [imageView yy_setImageWithURL:imageURL placeholder:placeholder options:kNilOptions progress:progressBlock transform:nil completion:completionBlock];
     
-    [imageView setImageWithURL:<#(nullable NSURL *)#> placeholder:<#(nullable UIImage *)#> options:<#(YYWebImageOptions)#> completion:<#^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error)completion#>
+//    - (void)setImageWithURL:(nullable NSURL *)imageURL
+//placeholder:(nullable UIImage *)placeholder
+//options:(YYWebImageOptions)options
+//progress:(nullable YYWebImageProgressBlock)progress
+//transform:(nullable YYWebImageTransformBlock)transform
+//completion:(nullable YYWebImageCompletionBlock)completion;
+    
+    [imageView setImageWithURL:imageURL placeholder:placeholder options:nil progress:progressBlock transform:nil completion:completionBlock];
     
 }
 
 - (void)cancelImageRequestForImageView:(UIImageView *)imageView {
-    [imageView yy_cancelCurrentImageRequest];
+//    [imageView yy_cancelCurrentImageRequest];
+    [imageView cancelCurrentImageRequest];
 }
 
 - (UIImage *)imageFromMemoryForURL:(NSURL *)url {

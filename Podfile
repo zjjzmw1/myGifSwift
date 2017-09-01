@@ -31,8 +31,6 @@ pod 'MBProgressHUD', '~> 1.0.0'
 pod 'UMengAnalytics-NO-IDFA', '~> 4.2.5'
 # Bugly 崩溃捕获平台
 pod 'Bugly', '~> 2.4.6'
-# YYKit
-pod 'YYKit', '~> 1.0.9',:inhibit_warnings => true
 pod 'Masonry', '~> 1.0.2'
 
 # 后端Bmob SDK
@@ -44,8 +42,9 @@ pod 'DGElasticPullToRefresh', '~> 1.1'
 #pod 'XLPhotoBrowser', '~> 1.0.2'
 pod 'XLPhotoBrowser+CoderXL'
 
-
-pod 'YYWebImage', '~> 1.0.5'
+# YYKit
+pod 'YYKit', '~> 1.0.9',:inhibit_warnings => true
+#pod 'YYWebImage', '~> 1.0.5'
 pod 'SDWebImage', '~> 4.0.0'
 
 

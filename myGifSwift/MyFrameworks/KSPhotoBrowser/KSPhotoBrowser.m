@@ -12,8 +12,10 @@
 #if __has_include(<YYWebImage/YYWebImage.h>)
 #import <YYWebImage/YYWebImage.h>
 #else
-#import "YYWebImage.h"
+//#import "YYWebImage.h"
 #endif
+
+#import "UIImage+YYAdd.h"
 
 static const NSTimeInterval kAnimationDuration = 0.3;
 static const NSTimeInterval kSpringAnimationDuration = 0.5;
@@ -405,7 +407,8 @@ static Class imageManagerClass = nil;
 
 - (void)blurBackgroundWithImage:(UIImage *)image animated:(BOOL)animated {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *blurImage = [image yy_imageByBlurDark];
+//        UIImage *blurImage = [image yy_imageByBlurDark];
+        UIImage *blurImage = [image imageByBlurDark];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (animated) {
                 [UIView animateWithDuration:kAnimationDuration animations:^{

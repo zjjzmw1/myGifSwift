@@ -9,6 +9,8 @@
 #import "KSPhotoBrowser.h"
 #import "KSPhotoView.h"
 
+#import "myGifSwift-Swift.h"
+
 #if __has_include(<YYWebImage/YYWebImage.h>)
 #import <YYWebImage/YYWebImage.h>
 #else
@@ -492,13 +494,17 @@ static Class imageManagerClass = nil;
     if (!image) {
         return;
     }
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        activityViewController.popoverPresentationController.sourceView = longPress.view;
-        CGPoint point = [longPress locationInView:longPress.view];
-        activityViewController.popoverPresentationController.sourceRect = CGRectMake(point.x, point.y, 1, 1);
-    }
-    [self presentViewController:activityViewController animated:YES completion:nil];
+    
+    // 长按弹出系统的分享。
+//    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
+//    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+//        activityViewController.popoverPresentationController.sourceView = longPress.view;
+//        CGPoint point = [longPress locationInView:longPress.view];
+//        activityViewController.popoverPresentationController.sourceRect = CGRectMake(point.x, point.y, 1, 1);
+//    }
+//    [self presentViewController:activityViewController animated:YES completion:nil];
+    // 长按弹出上传按钮    
+    [Tool showUploadAlertCWithCurrentImage:image fromVC:self];
 }
 
 - (void)didPan:(UIPanGestureRecognizer *)pan {

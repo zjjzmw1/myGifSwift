@@ -628,6 +628,35 @@ public class Tool: NSObject,UIActionSheetDelegate {
         alertC.showAlertC(vc: vc, completion: nil)
     }
     
+    /// 弹出收藏、保存本地的控件
+    public class func showUploadAlertC(currentImage: UIImage, fromVC: UIViewController) {
+        let alertC = UIAlertController.initAlertC(title: "上传图片", msg: nil, style: .actionSheet)
+        let collectionStr = "上传"
+        alertC.addMyAction(title: collectionStr, style: .default) { (alertA) in
+            // 上传的方法
+            // 先上传文件
+            ProgressHUD.show(with: nil, title: "上传中...")
+            let bmobFile: BmobFile = BmobFile.init(fileName: "MyGif.gif", withFileData: UIImagePNGRepresentation(currentImage))
+            bmobFile.save(inBackground: { (isSuccessed, error) in
+                if isSuccessed {
+                    ProgressHUD.showSuccess("上传成功")
+                    let myGif = BmobObject.init(className: "MyGif")
+                    myGif?.setObject(bmobFile, forKey: "filetype")
+                    myGif?.saveInBackground(resultBlock: { (isSuccess, error) in
+                        
+                    })
+                } else {
+                    ProgressHUD.showError("上传失败")
+                }
+            })
+            ProgressHUD.defaultManager().hud.isUserInteractionEnabled = false
+        }
+        alertC.addMyAction(title: "取消", style: .cancel)
+//        let vc = UIApplication.shared.keyWindow?.rootViewController
+        let vc = fromVC
+        alertC.showAlertC(vc: vc, completion: nil)
+    }
+    
     /// 保存url到本地userDefault里面
     public class func saveUrlStrToUserDefault(url: String) {
         let arr = UserDefaults.standard.value(forKey: "kImageUrlArray") as? NSArray ?? NSArray()

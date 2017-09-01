@@ -88,6 +88,8 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
         let myGifM = self.dataArr.object(at: indexPath.row) as? MyGifModel
         if let urlStr = myGifM?.dataDic?.image?.url {
             cell.reloadBackgroundImageUrl(urlStr, description: "")
+        } else if let urlStr = myGifM?.dataDic?.filetype?.url {
+            cell.reloadBackgroundImageUrl(urlStr, description: "")
         }
         
         return cell
@@ -100,43 +102,36 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
         let urlArr = NSMutableArray.init()
         for i in 0 ..< self.dataArr.count {
             let model = self.dataArr.object(at: i) as? MyGifModel
-            if let url = model?.dataDic?.image?.url {
+            var url = model?.dataDic?.image?.url
+            if url == nil {
+                url = model?.dataDic?.filetype?.url
+            }
+            if let url = url {
                 urlArr.add(url)
             }
         }
-        if let urlStr = myGifM?.dataDic?.image?.url {
-            var currentIndex = 0
-            var urlCount = 1
-            if urlArr.count > 1 {
-                urlCount = urlArr.count
-            }
-            if urlCount > indexPath.row {
-                currentIndex = indexPath.row
-            }
-            self.tabBarController?.tabBar.isHidden = true
-            // 大图浏览器
-            Tooles.showBigImage(cell.backgroundImageView, bigImageUrl: urlStr, bigImageUrlArray: urlArr as! [Any], pictureCount: Int32(urlCount), currentIndex: Int32(currentIndex))
-            // 炫酷的方式
-//            let items = NSMutableArray()
-//            for i in 0 ..< urlArr.count {
-//                let item = KSPhotoItem.init(sourceView: cell.backgroundImageView, imageUrl: URL.init(string: urlArr[i] as! String)!)
-//                items.add(item)
-//            }
-//            /// 弹出图片浏览器
-//            let browser = KSPhotoBrowser.init(photoItems: items as! [KSPhotoItem], selectedIndex: UInt(indexPath.row))
-//            browser.delegate = self
-//            browser.dismissalStyle = .rotation
-//            browser.backgroundStyle = .blurPhoto
-//            browser.loadingStyle = .determinate
-//            browser.pageindicatorStyle = .text
-//            browser.bounces = true
-//            browser.show(from: self)
-            
+        var urlStr = myGifM?.dataDic?.image?.url
+        if urlStr == nil {
+            urlStr = myGifM?.dataDic?.filetype?.url
         }
+        if urlStr == nil {
+            return
+        }
+        var currentIndex = 0
+        var urlCount = 1
+        if urlArr.count > 1 {
+            urlCount = urlArr.count
+        }
+        if urlCount > indexPath.row {
+            currentIndex = indexPath.row
+        }
+        self.tabBarController?.tabBar.isHidden = true
+        // 大图浏览器
+        Tooles.showBigImage(cell.backgroundImageView, bigImageUrl: urlStr, bigImageUrlArray: urlArr as! [Any], pictureCount: Int32(urlCount), currentIndex: Int32(currentIndex))
     }
     
     func ks_photoBrowser(_ browser: KSPhotoBrowser, didSelect item: KSPhotoItem, at index: UInt) {
-        SLog(index)
+//        SLog(index)
         // 收藏、保存到本地
 //        if (![NSString isEmptyString:bigImageUrlArray[index]]) {
 //            [Tool showAlertCWithUrlStr:bigImageUrlArray[index] currentImage:wBrowser.currentLongPressImage];

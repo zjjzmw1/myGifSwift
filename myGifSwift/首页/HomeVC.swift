@@ -88,7 +88,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
         let myGifM = self.dataArr.object(at: indexPath.row) as? MyGifModel
         if let urlStr = myGifM?.dataDic?.image?.url {
             cell.reloadBackgroundImageUrl(urlStr, description: "")
-        } else if let urlStr = myGifM?.dataDic?.filetype?.url {
+        } else if let urlStr = myGifM?.dataDic?.userImage?.url {
             cell.reloadBackgroundImageUrl(urlStr, description: "")
         }
         
@@ -104,7 +104,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
             let model = self.dataArr.object(at: i) as? MyGifModel
             var url = model?.dataDic?.image?.url
             if url == nil {
-                url = model?.dataDic?.filetype?.url
+                url = model?.dataDic?.userImage?.url
             }
             if let url = url {
                 urlArr.add(url)
@@ -112,7 +112,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
         }
         var urlStr = myGifM?.dataDic?.image?.url
         if urlStr == nil {
-            urlStr = myGifM?.dataDic?.filetype?.url
+            urlStr = myGifM?.dataDic?.userImage?.url
         }
         if urlStr == nil {
             return

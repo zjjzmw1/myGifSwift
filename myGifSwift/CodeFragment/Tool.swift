@@ -14,6 +14,7 @@ import MediaPlayer
 import MapKit
 import AssetsLibrary
 
+import MBProgressHUD
 
 /// 网络返回的成功码
 let kSuccessCode = 200
@@ -636,18 +637,22 @@ public class Tool: NSObject,UIActionSheetDelegate {
             // 上传的方法
             // 先上传文件
             ProgressHUD.show(with: nil, title: "上传中...")
-            let bmobFile: BmobFile = BmobFile.init(fileName: "MyGif.gif", withFileData: UIImagePNGRepresentation(currentImage))
+            ProgressHUD.defaultManager().hud.mode = .annularDeterminate
+            let bmobFile: BmobFile = BmobFile.init(fileName: "userUploadGif.gif", withFileData: UIImagePNGRepresentation(currentImage))
+            NSData.init
             bmobFile.save(inBackground: { (isSuccessed, error) in
                 if isSuccessed {
                     ProgressHUD.showSuccess("上传成功")
                     let myGif = BmobObject.init(className: "MyGif")
-                    myGif?.setObject(bmobFile, forKey: "filetype")
+                    myGif?.setObject(bmobFile, forKey: "userImage") // 对应的列表的名字。。。。
                     myGif?.saveInBackground(resultBlock: { (isSuccess, error) in
                         
                     })
                 } else {
                     ProgressHUD.showError("上传失败")
                 }
+            }, withProgressBlock: { (progressFloat) in
+                ProgressHUD.defaultManager().hud.progress = Float.init(progressFloat)
             })
             ProgressHUD.defaultManager().hud.isUserInteractionEnabled = false
         }

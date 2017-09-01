@@ -24,7 +24,7 @@ class DataModel: HandyJSON {
     var createdAt: String?
     var updatedAt: String?
     var image: ImageModel?
-    var filetype: ImageModel? // 自己上传的图片
+    var userImage: ImageModel? // 自己上传的图片
     
     required init() {
         

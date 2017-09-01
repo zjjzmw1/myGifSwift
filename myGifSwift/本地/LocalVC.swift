@@ -126,11 +126,17 @@ class LocalVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,PHPh
         let option = PHImageRequestOptions.init()
         option.isSynchronous = true
         option.version = .original
-        PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (data, str, orientation, dictInfo) in
-            if let imageD = data {
-                cell.reloadBackgroundImage(UIImage.init(data: imageD), description: "")
-            }
+        // 这个清楚，但是卡
+//        PHCachingImageManager.default().requestImageData(for: phAsset, options: option) { (data, str, orientation, dictInfo) in
+//            if let imageD = data {
+//                cell.reloadBackgroundImage(UIImage.init(data: imageD), description: "")
+//            }
+//        }
+        // 这个不清楚，但是不卡
+        PHCachingImageManager.default().requestImage(for: phAsset, targetSize: .zero, contentMode: .aspectFit, options: option) { (image, dictInfo) in
+            cell.reloadBackgroundImage(image, description: "")
         }
+        
         return cell
     }
     

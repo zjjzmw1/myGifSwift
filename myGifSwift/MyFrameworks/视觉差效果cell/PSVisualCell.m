@@ -37,7 +37,8 @@ static CGFloat const kImageViewHeight = 300;
 }
 
 - (void)reloadBackgroundImageUrl:(NSString *)urlStr description:(NSString *)des {
-    [ _backgroundImageView setImageWithURL:[NSURL URLWithString:urlStr] options:YYWebImageOptionProgressiveBlur];
+//    [ _backgroundImageView setImageWithURL:[NSURL URLWithString:urlStr] options:YYWebImageOptionProgressiveBlur];
+    [_backgroundImageView setImageWithURL:[NSURL URLWithString:urlStr] placeholder:[UIImage imageNamed:@"icon_1024"] options:YYWebImageOptionProgressiveBlur completion:nil];
     _label.text = des;
 }
     

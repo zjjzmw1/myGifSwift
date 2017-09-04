@@ -210,6 +210,30 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
         self.tableView.reloadData()
     }
     
+    // 滑动删除、收藏等   ----------- 注释了这行就没有滑动删除了。。。。很方便
+    /// - 滑动方法
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action2 = UITableViewRowAction(style: .default, title: NSLocalizedString("删除", comment: "")) { [weak self] (rowAction, indexP) in
+            // 删除的方法
+            let myGifM = self?.dataArr.object(at: indexPath.row) as? MyGifModel
+            let bmobQ = BmobQuery.init(className: "MyGif")
+            bmobQ?.getObjectInBackground(withId: myGifM?.dataDic?.objectId, block: { (bmobObject, error) in
+                if error == nil {
+                    if let bmobObject = bmobObject {
+                        bmobObject.deleteInBackground({ (isSuccessed, error) in
+                            if isSuccessed {
+                                self!.dataArr.removeObject(at: indexPath.row)
+                                self?.refreshAction()
+                            }
+                        })
+                    }
+                }
+            })
+        }
+        
+        return [action2]
+    }
+    
     deinit {
         tableView.dg_removePullToRefresh()
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import DGElasticPullToRefresh
+import pop
 
 class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPhotoBrowserDelegate {
     
@@ -16,6 +17,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
     
     var refreshControl:ZJRefreshControl!;
     
+    var lastRow: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +93,28 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
         } else if let urlStr = myGifM?.dataDic?.userImage?.url {
             cell.reloadBackgroundImageUrl(urlStr, description: "")
         }
+        // 添加pop动画 -- 透明度渐变
+        let animation1: POPBasicAnimation! = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        animation1.fromValue = 0.0
+        animation1.toValue = 1.0
+        animation1.duration = 1.0
+        cell.backgroundImageView.pop_add(animation1, forKey: "fade")
+        // 添加pop动画 -- 渐进
+        let animation: POPBasicAnimation! = POPBasicAnimation(propertyNamed: kPOPLayerPositionX)
+        if lastRow <= indexPath.row {
+            animation.fromValue = NSValue.init(cgPoint: CGPoint.init(x: -SCREEN_WIDTH/2.0, y: 0 ))
+        } else {
+            animation.fromValue = NSValue.init(cgPoint: CGPoint.init(x: SCREEN_WIDTH, y: 0 ))
+        }
+        lastRow = indexPath.row
+        animation.toValue = NSValue.init(cgPoint: CGPoint.init(x: SCREEN_WIDTH/2.0, y: 0 ))
+        animation.duration = 0.3
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        cell.backgroundImageView.layer.pop_add(animation, forKey: "position")
+        // 添加pop动画 -- 变大
+        let animation2: POPSpringAnimation! = POPSpringAnimation(propertyNamed: kPOPLayerBounds)
+        animation2.toValue = NSValue.init(cgRect: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 300))
+        cell.backgroundImageView.layer.pop_add(animation2, forKey: "size")
         
         return cell
     }

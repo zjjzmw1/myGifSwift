@@ -79,6 +79,19 @@
 		BDEA1A0A1F4E75500078451D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEA1A051F4E753E0078451D /* UINavigationController+FDFullscreenPopGesture.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BDCBFB081F5E34A1005904FB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		847F258FFD16C60E0E7671E2 /* Pods-myGifSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myGifSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift.release.xcconfig"; sourceTree = "<group>"; };
 		8A2DF8133E0B7DBFD87A222D /* Pods-myGifSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myGifSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myGifSwift/Pods-myGifSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -536,6 +549,7 @@
 				3B2043D0E3347EBEA3A917B7 /* [CP] Embed Pods Frameworks */,
 				22623C7C4B4E22504C7FDC6C /* [CP] Copy Pods Resources */,
 				BDA23DF71F4C094E00B89066 /* ShellScript */,
+				BDCBFB081F5E34A1005904FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -628,6 +642,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPhotoBrowser+CoderXL/XLPhotoBrowser_CoderXL.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -645,6 +660,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPhotoBrowser_CoderXL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

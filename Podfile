@@ -47,5 +47,6 @@ pod 'YYKit', '~> 1.0.9',:inhibit_warnings => true
 #pod 'YYWebImage', '~> 1.0.5'
 pod 'SDWebImage', '~> 4.0.0'
 
+pod 'pop', '~> 1.0.10'
 
 end

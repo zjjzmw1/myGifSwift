@@ -9,7 +9,7 @@
 #import "PSVisualCell.h"
 #import "UIView+Utils.h"
 #import <YYKit/YYKit.h>
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+//#define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
 static CGFloat const kImageViewHeight = 300;
 
@@ -40,6 +40,7 @@ static CGFloat const kImageViewHeight = 300;
 //    [ _backgroundImageView setImageWithURL:[NSURL URLWithString:urlStr] options:YYWebImageOptionProgressiveBlur];
     [_backgroundImageView setImageWithURL:[NSURL URLWithString:urlStr] placeholder:[UIImage imageNamed:@"icon_1024"] options:YYWebImageOptionProgressiveBlur completion:nil];
     _label.text = des;
+    
 }
     
     /**

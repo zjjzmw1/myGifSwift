@@ -217,7 +217,7 @@ class HomeVC: BaseViewController,UITableViewDelegate,UITableViewDataSource,KSPho
             // 删除的方法
             let myGifM = self?.dataArr.object(at: indexPath.row) as? MyGifModel
             let bmobQ = BmobQuery.init(className: "MyGif")
-            bmobQ?.getObjectInBackground(withId: myGifM?.dataDic?.objectId, block: { (bmobObject, error) in
+            bmobQ?.getObjectInBackground(withId: myGifM?.dataDic?.objectId, block: { [weak self] (bmobObject, error) in
                 if error == nil {
                     if let bmobObject = bmobObject {
                         bmobObject.deleteInBackground({ (isSuccessed, error) in
